@@ -28,7 +28,7 @@ public class SpaceInvadersTest {
 		"...............\n" + 
 		"...............\n" + 
 		"...............\n" + 
-		"...............\n" , spaceinvaders.toString());
+		"...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
     }
 
     @Test
