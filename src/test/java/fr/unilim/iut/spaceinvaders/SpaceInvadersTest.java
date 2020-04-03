@@ -6,8 +6,7 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.unilim.spaceinvaders.utils.*;
-import fr.unilim.iut.spaceinvaders.*;
+import fr.unilim.iut.spaceinvaders.utils.*;
 
 public class SpaceInvadersTest {
     private SpaceInvaders spaceinvaders;
@@ -37,7 +36,7 @@ public class SpaceInvadersTest {
 	spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1,1), new Position(7,9));
 	assertEquals("" + 
 		"...............\n" + 
-		"...............\n" +
+		"...............\n" + 
 		"...............\n" + 
 		"...............\n" + 
 		"...............\n" + 
