@@ -1,20 +1,20 @@
 package fr.unilim.iut.spaceinvaders;
 
 public class Vaisseau {
-    int x;
-    int y;
-    int longueur;
-    int hauteur;
-
-    public Vaisseau(int longueur, int hauteur, int x, int y) {
-	this.x = x;
-	this.y = y;
-	this.longueur = longueur;
-	this.hauteur = hauteur;
-    }
+    Position origine;
+    Dimension dimension;
 
     public Vaisseau(int longueur, int hauteur) {
 	this(longueur, hauteur, 0, 0);
+    }
+
+    public Vaisseau(int longueur, int hauteur, int x, int y) {
+	this(new Dimension(longueur, hauteur), new Position(x, y));
+    }
+
+    public Vaisseau(Dimension dimension, Position positionOrigine) {
+	this.dimension = dimension;
+	this.origine = positionOrigine;
     }
 
     public boolean occupeLaPosition(int x, int y) {
@@ -25,36 +25,38 @@ public class Vaisseau {
 	return (ordonneeLaPlusBasse()<=y) && (y<=ordonneeLaPlusHaute());
     }
 
-    public int ordonneeLaPlusBasse() {
-	return ordonneeLaPlusHaute()-this.hauteur+1;
-    }
-
-    public int ordonneeLaPlusHaute() {
-	return this.y;
-    }
-
     public boolean estAbsiceCouverte(int x) {
 	return (abscisseLaPlusAGauche()<=x) && (x<=abscisseLaPlusADroite());
     }
 
+    public int ordonneeLaPlusBasse() {
+	return ordonneeLaPlusHaute()-this.dimension.hauteur()+1;
+    }
+
+    public int ordonneeLaPlusHaute() {
+	return this.origine.ordonnee();
+    }
+
     public int abscisseLaPlusADroite() {
-	return abscisseLaPlusAGauche()+this.longueur-1;
+	return abscisseLaPlusAGauche()+this.dimension.longueur()-1;
     }
 
     public int abscisseLaPlusAGauche() {
-	return this.x;
+	return this.origine.abscisse();
     }
 
     public void seDeplacerVersLaDroite() {
-	this.x = this.x + 1;
+	this.origine.changerAbscisse(this.origine.abscisse()+1);
     }
+
 
     public void seDeplacerVersLaGauche() {
-	this.x = this.x - 1;
+	this.origine.changerAbscisse(this.origine.abscisse()-1);
     }
 
+
     public void positionner(int x, int y) {
-	this.x = x;
-	this.y = y;
+	this.origine.changerAbscisse(x);
+	this.origine.changerOrdonnee(y);
     }
 }
