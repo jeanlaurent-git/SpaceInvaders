@@ -2,3 +2,5 @@ Vaisseau : véhicule commandé par le joueur, pouvant se déplacer de droite à 
 Envahisseur : Ennemi qui apparaît à l'écran, se déplace automatiquement et qui doit être détruit par un missile lancé depuis le vaisseau du joueur.
 Missile : projectile envoyé à la verticale par le vaisseau vers l'envahisseur dans le but de le détruire.
 Vitesse : correspond au rapport (nombre de pixels) / (demande de déplacement). Elle est associée au vaisseau.
+Personnage : Etre fictif et virtuel, contrôlé ou non par le joueur, qui apparaît dans un jeu vidéo.
+Sprite : élément graphique qui peut se deplacer sur l'ecran. Identifie les personnages et les objets qui se superposent au fond d'ecran et qui se deplassent.
