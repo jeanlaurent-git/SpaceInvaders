@@ -14,52 +14,52 @@ public abstract class Sprite {
     }
 
     public boolean occupeLaPosition(int x, int y) {
-        return (estAbsiceCouverte(x) && estOrdonneeCouverte(y));
+	return (estAbsiceCouverte(x) && estOrdonneeCouverte(y));
     }
 
     public boolean estOrdonneeCouverte(int y) {
-        return (ordonneeLaPlusBasse()<=y) && (y<=ordonneeLaPlusHaute());
+	return (ordonneeLaPlusBasse()<=y) && (y<=ordonneeLaPlusHaute());
     }
 
     public boolean estAbsiceCouverte(int x) {
-        return (abscisseLaPlusAGauche()<=x) && (x<=abscisseLaPlusADroite());
+	return (abscisseLaPlusAGauche()<=x) && (x<=abscisseLaPlusADroite());
     }
 
     public int ordonneeLaPlusBasse() {
-        return ordonneeLaPlusHaute()-this.dimension.hauteur()+1;
+	return ordonneeLaPlusHaute()-this.dimension.hauteur()+1;
     }
 
     public int ordonneeLaPlusHaute() {
-        return this.origine.ordonnee();
+	return this.origine.ordonnee();
     }
 
     public int abscisseLaPlusADroite() {
-        return abscisseLaPlusAGauche()+this.dimension.longueur()-1;
+	return abscisseLaPlusAGauche()+this.dimension.longueur()-1;
     }
 
     public int abscisseLaPlusAGauche() {
-        return this.origine.abscisse();
+	return this.origine.abscisse();
     }
 
-    public void seDeplacerVersLaDroite() {
-        this.origine.changerAbscisse(this.origine.abscisse()+vitesse);
+    public void deplacerHorizontalementVers(Direction direction) {
+	this.origine.changerAbscisse(this.origine.abscisse() + direction.valeur()*vitesse);
     }
 
-    public void seDeplacerVersLaGauche() {
-        this.origine.changerAbscisse(this.origine.abscisse()-vitesse);
+    public void deplacerVerticalementVers(Direction direction) {
+	this.origine.changerOrdonnee(this.origine.ordonnee() + direction.valeur()*vitesse);
     }
 
     public void positionner(int x, int y) {
-        this.origine.changerAbscisse(x);
-        this.origine.changerOrdonnee(y);
+	this.origine.changerAbscisse(x);
+	this.origine.changerOrdonnee(y);
     }
 
     public int hauteur() {
-        return this.dimension.hauteur();
+	return this.dimension.hauteur();
     }
 
     public int longueur() {
-        return this.dimension.longueur();
+	return this.dimension.longueur();
     }
 
 }
