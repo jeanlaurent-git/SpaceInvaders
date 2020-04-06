@@ -17,13 +17,13 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 *Le nombre de bâtiments n'est pas le même d'une version à l'autre.*
 
 ## Sommaire
-- [Semaine n°1 : du 23 au 27 février](#semaine1)
-- [Semaine n°2 : du 30 février au 3 avril](#semaine2)
-- [Semaine n°3 : du 6 au 10 avril](#semaine3)
-- [Glossaire](#glossaire)
+- [Semaine n°1 : du 23 au 27 février](#semaine-n1-du-23-au-27-février)
+- [Semaine n°2 : du 30 février au 3 avril](#semaine-n2-du-30-février-au-3-avril)
+- [Semaine n°3 : du 6 au 10 avril](#semaine-n3-du-6-au-10-avril)
+- [Glossaire](#glossaire-)
 
 
-## Semaine n°1 : du 23 au 27 février <a id="semaine1"></a>
+## Semaine n°1 : du 23 au 27 février
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -65,7 +65,7 @@ Aucune
 ![Diagrammes de classes de la fonctionnalité n°1](Captures/spaceinvaders%20diagramme%20de%20classe%20capture%201.PNG)
 
 ### Nuage de mots du projet spaceinvaders *(Fonctionnalité 1)*
-(généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/JavaBlacklist.txt) fournis pas [Isabelle Blasquez](https://github.com/iblasquez))
+(généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/JavaBlacklist.txt) tous les deux fournis par [Isabelle Blasquez](https://github.com/iblasquez))
  
 ![Nuage de mots de la fonctionnalité n°1](Captures/spaceinvaders%20cloud%20capture%201.png)
 
@@ -80,7 +80,7 @@ Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une 
 -------------
 
 
-## Semaine n°2 : du 30 février au 3 avril <a id="semaine2"></a>
+## Semaine n°2 : du 30 février au 3 avril
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -125,11 +125,11 @@ Implémentation de ces classes dans les classes `SpaceInvaders` et `Vaisseau`.
 
 
 - Story n°3.1 : Comprendre ce qu'est la vitesse dans notre application et faire un choix de conception. 
-Ajout de la définition de la vitesse au [glossaire](#glossaire). 
+Ajout de la définition de la vitesse au [glossaire](#glossaire-). 
 
 
 - Story n°3.2 : Ajouter la `vitesse` au `Vaisseau` sans régression de comportement. 
-Implémentation d'un attribut `vitesse` a la classe `Vaisseau`. 
+Implémentation d'un attribut `vitesse` dans la classe `Vaisseau`. 
 Refactoring des méthodes de la classe pour implémenter la vitesse. 
 
 
@@ -138,7 +138,7 @@ Création d'un nouveau constructeur en surcharge de la classe `Vaisseau` qui a l
 
 
 - Story n°3.4 : Faire en sorte que le déplacement se fasse *correctement* pour une vitesse quelconque. 
-Refactoring de la méthode `positionnerUnNouveauVaisseau` de la classe `SpaceInvaders` pour ajouter la vitesse a sa signature.
+Refactoring de la méthode `positionnerUnNouveauVaisseau` de la classe `SpaceInvaders` pour ajouter la vitesse à sa signature.
 refactoring de la classe `SpaceInvadersTest` pour inclure la vitesse dans tous les tests.
 
 
@@ -158,7 +158,7 @@ Aucune
 ![Diagrammes de classes de la fonctionnalité n°3](Captures/spaceinvaders%20diagramme%20de%20classe%20capture%203.PNG)
 
 ### Nuage de mots du projet spaceinvaders *(Fonctionnalités 2 et 3)*
-(généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/JavaBlacklist.txt) fournis pas [Isabelle Blasquez](https://github.com/iblasquez))
+(généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/JavaBlacklist.txt) tous les deux fournis par [Isabelle Blasquez](https://github.com/iblasquez))
  
 ![Nuage de mots de la fonctionnalité n°2](Captures/spaceinvaders%20cloud%20capture%202.png)
 
@@ -175,7 +175,7 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 -------------
 
 
-## Semaine n°3 : du 6 au 10 avril <a id="semaine3"></a>
+## Semaine n°3 : du 6 au 10 avril
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -185,7 +185,7 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 
 - Story n°4.1 : Comprendre ce qu'est un missile et refactorer. 
 Création d'une superclasse `Sprite`. 
-Ajout des termes en lien avec le sprite au [glossaire](#glossaire). 
+Ajout des termes en lien avec le sprite au [glossaire](#glossaire-). 
 Refactoring des classes `Vaisseau` et `Sprite`.
 
 
@@ -194,7 +194,7 @@ Analyse de la fonctionnalité grâce au diagramme de séquence disponible [ici](
 
 
 - Story n°4.3 : Tirer un missile. 
-Un npouveau missile est créé
+Un nouveau missile est créé
 Il se positionne au dessus et centré par rapport au vaisseau.
 Le joueur ne peut créer qu'un missile à la fois. Tant qu'il y en a un dans l'espace de jeu, il ne peut s'en créer de nouveau.
 Le missile créé ne peut dépasser la largeur du vaisseau (simple logique) et il ne peut pas non plus dépasser la hauteur de l'espace de jeu, sinon une exception est levée. 
@@ -216,13 +216,13 @@ Aucune
 ![Diagrammes de classes de la fonctionnalité n°4](Captures/spaceinvaders%20diagramme%20de%20classe%20capture%204.PNG)
 
 ### Nuage de mots du projet spaceinvaders *(Fonctionnalité 4)*
-(généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/JavaBlacklist.txt) fournis pas [Isabelle Blasquez](https://github.com/iblasquez))
+(généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/JavaBlacklist.txt) tous les deux fournis  par [Isabelle Blasquez](https://github.com/iblasquez))
  
-![Nuage de mots de la fonctionnalité n°2](Captures/spaceinvaders%20cloud%20capture%204.png)
+![Nuage de mots de la fonctionnalité n°4](Captures/spaceinvaders%20cloud%20capture%204.png)
 
 
 ### Difficultés rencontrées 
-Détection du missile en haut de l'espace de jeu a cause des axes inversés.
+Détection du missile en haut de l'espace de jeu à cause des axes inversés.
 
 ### Remarques diverses
 Refactoring de la classe `DessinSpaceInvaders` pour ajouter le missile et ajout des constantes `MISSILE_LONGUEUR`, `MISSILE_HAUTEUR` et `MISSILE_VITESSE` à la classe `Constantes`
@@ -241,7 +241,7 @@ Refactoring de la classe `DessinSpaceInvaders` pour ajouter le missile et ajout 
 
 * **Immobile** : Aucun déplacement, aucune exception levée : le sprite reste juste à sa position actuelle.
 
-* **Vitesse** : Grandeur physique associée aux différents sprites. Elle correspond a la vitesse de déplacement des sprites sur l'ecran et peut varier. Elle est représentée par un entier qui correspond au nombre de pixels parcourus par le sprite a chaque demande de déplacement
+* **Vitesse** : Grandeur physique associée aux différents sprites. Elle correspond à la vitesse de déplacement des sprites sur l'ecran et peut varier. Elle est représentée par un entier qui correspond au nombre de pixels parcourus par le sprite à chaque demande de déplacement.
 
 * **Personnage** : Etre fictif et virtuel, contrôlé ou non par le joueur, qui apparaît dans un jeu vidéo.
 
