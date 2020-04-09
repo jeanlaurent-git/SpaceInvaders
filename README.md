@@ -17,13 +17,13 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 *Le nombre de bâtiments n'est pas le même d'une version à l'autre.*
 
 ## Sommaire
-- [Semaine n°1 : du 23 au 27 février](#semaine-n1--du-23-au-27-février)
-- [Semaine n°2 : du 30 février au 3 avril](#semaine-n2--du-30-février-au-3-avril)
-- [Semaine n°3 : du 6 au 10 avril](#semaine-n3--du-6-au-10-avril)
+- [Semaine n°1 : du 23 au 27 février](#Semaine1)
+- [Semaine n°2 : du 30 février au 3 avril](#Semaine2)
+- [Semaine n°3 : du 6 au 10 avril](#Semaine3)
 - [Glossaire](#glossaire)
 
 
-## Semaine n°1 : du 23 au 27 février
+## <div id="Semaine1">Semaine n°1 : du 23 au 27 février</div>
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -80,7 +80,7 @@ Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une 
 -------------
 
 
-## Semaine n°2 : du 30 février au 3 avril
+## <div id="Semaine2">Semaine n°2 : du 30 février au 3 avril</div>
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -175,7 +175,7 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 -------------
 
 
-## Semaine n°3 : du 6 au 10 avril
+## <div id="Semaine3">Semaine n°3 : du 6 au 10 avril</div>
 
 
 ### Sprints et fonctionnalités réalisées 
