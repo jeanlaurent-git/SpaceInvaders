@@ -28,7 +28,7 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 
 ### Sprints et fonctionnalités réalisées 
 
-#### Fonctionnalité n°1 : Déplacer le vaisseau dans l'espace de jeu (fini)
+#### Fonctionnalité n°1 : Déplacer le vaisseau dans l'espace de jeu (:white_check_mark:)
 
 
 - **Story n°1.1** : Créer un espace de jeu.  
@@ -85,7 +85,7 @@ Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une 
 
 ### Sprints et fonctionnalités réalisées 
 
-#### Fonctionnalité n°2 : Dimensionner le vaisseau (fini)
+#### Fonctionnalité n°2 : Dimensionner le vaisseau (:white_check_mark:)
 
 
 - **Story n°2.1** : Positionner un nouveau vaisseau avec une dimension donnée.  
@@ -121,7 +121,7 @@ Implémentation de ces classes dans les classes `SpaceInvaders` et `Vaisseau`.
 #### Implémentation du moteur graphique Spique
 
 
-#### Fonctionnalité n°3 : Choisir la vitesse du vaisseau (fini)
+#### Fonctionnalité n°3 : Choisir la vitesse du vaisseau (:white_check_mark:)
 
 
 - **Story n°3.1** : Comprendre ce qu'est la vitesse dans notre application et faire un choix de conception.  
@@ -180,7 +180,7 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 
 ### Sprints et fonctionnalités réalisées 
 
-#### Fonctionnalité n°4 : Tirer un missile depuis le vaisseau (fini)
+#### Fonctionnalité n°4 : Tirer un missile depuis le vaisseau (:white_check_mark:)
 
 
 - **Story n°4.1** : Comprendre ce qu'est un missile et refactorer.  
@@ -207,7 +207,7 @@ Refactoring de la classe Sprite.
 Refactoring de la méthode `deplacerMissile` afin qu'elle lève une exception si le missile touche le haut de l'espace de jeu.
 
 
-#### Fonctionnalité n°5 : Ajouter un envahisseur dans le jeu (fini)
+#### Fonctionnalité n°5 : Ajouter un envahisseur dans le jeu (:white_check_mark:)
 
 
 - **Story n°5.1** : Créer un envhisseur.  
