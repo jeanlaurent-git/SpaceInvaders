@@ -4,8 +4,12 @@ public class Envahisseur extends Sprite {
     Direction direction;
 
     public Envahisseur(Dimension dimension, Position origine, int vitesse, Direction direction) {
-	super(dimension, origine, vitesse);
-	this.direction = direction;
+        super(dimension, origine, vitesse);
+        this.direction = direction;
+    }
+
+    public Envahisseur(Dimension dimension, Position position, int vitesse) {
+        this(dimension, position, vitesse, Direction.DROITE);
     }
 
 }
