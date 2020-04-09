@@ -21,6 +21,7 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
     * [Fonctionnalité n°1](#Fonctionnalite1)
 - [Semaine n°2 : du 30 février au 3 avril](#Semaine2)
     * [Fonctionnalité n°2](#Fonctionnalite2)
+    * [Implémentation moteur graphique](#MoteurGraphique)
     * [Fonctionnalité n°3](#Fonctionnalite3)
 - [Semaine n°3 : du 6 au 10 avril](#Semaine3)
     * [Fonctionnalité n°4](#Fonctionnalite4)
@@ -35,8 +36,9 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 
 
 ### Sprints et fonctionnalités réalisées 
+<div id="Fonctionnalite1"></div>
 
-#### Fonctionnalité n°1 : Déplacer le vaisseau dans l'espace de jeu (:white_check_mark:)<div id="Fonctionnalite1"></div>
+#### Fonctionnalité n°1 : Déplacer le vaisseau dans l'espace de jeu (:white_check_mark:)
 
 
 - **Story n°1.1** : Créer un espace de jeu.  
@@ -92,8 +94,9 @@ Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une 
 
 
 ### Sprints et fonctionnalités réalisées 
+<div id="Fonctionnalite2"></div>
 
-#### Fonctionnalité n°2 : Dimensionner le vaisseau (:white_check_mark:)<div id="Fonctionnalite2"></div>
+#### Fonctionnalité n°2 : Dimensionner le vaisseau (:white_check_mark:)
 
 
 - **Story n°2.1** : Positionner un nouveau vaisseau avec une dimension donnée.  
@@ -125,11 +128,12 @@ Si le bord gauche du vaisseau se trouve sur la bordure gauche de l'espace de jeu
 Création des classes `Position` et `Dimension`.
 Implémentation de ces classes dans les classes `SpaceInvaders` et `Vaisseau`.
 
+<div id="MoteurGraphique"></div>
 
 #### Implémentation du moteur graphique Spique
+<div id="Fonctionnalite3"></div>
 
-
-#### Fonctionnalité n°3 : Choisir la vitesse du vaisseau (:white_check_mark:)<div id="Fonctionnalite3"></div>
+#### Fonctionnalité n°3 : Choisir la vitesse du vaisseau (:white_check_mark:)
 
 
 - **Story n°3.1** : Comprendre ce qu'est la vitesse dans notre application et faire un choix de conception.  
@@ -187,8 +191,9 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 
 
 ### Sprints et fonctionnalités réalisées 
+<div id="Fonctionnalite4"></div>
 
-#### Fonctionnalité n°4 : Tirer un missile depuis le vaisseau (:white_check_mark:)<div id="Fonctionnalite4"></div>
+#### Fonctionnalité n°4 : Tirer un missile depuis le vaisseau (:white_check_mark:)
 
 
 - **Story n°4.1** : Comprendre ce qu'est un missile et refactorer.  
@@ -213,9 +218,9 @@ Création d'une classe de tests `VaisseauTest`.
 Création d'une énumération `Direction` permettant de réorganiser la disposition de l'espace de jeu.  
 Refactoring de la classe Sprite.  
 Refactoring de la méthode `deplacerMissile` afin qu'elle lève une exception si le missile touche le haut de l'espace de jeu.
+<div id="Fonctionnalite5"></div>
 
-
-#### Fonctionnalité n°5 : Ajouter un envahisseur dans le jeu (:white_check_mark:)<div id="Fonctionnalite5"></div>
+#### Fonctionnalité n°5 : Ajouter un envahisseur dans le jeu (:white_check_mark:)
 
 
 - **Story n°5.1** : Créer un envhisseur.  
@@ -270,8 +275,9 @@ Refactoring de la classe `DessinSpaceInvaders` pour ajouter l'envahisseur et ajo
 
 
 ### Sprints et fonctionnalités réalisées 
+<div id="Fonctionnalite6"></div>
 
-#### Fonctionnalité n°6 : Détecter une collision entre deux sprites (:white_check_mark:)<div id="Fonctionnalite6"></div>
+#### Fonctionnalité n°6 : Détecter une collision entre deux sprites (:white_check_mark:)
 
 
 - **Story n°6.1** : Comprendre ce qu'est une collision.  
@@ -294,9 +300,9 @@ Création des différents tests dans la classe de test `CollisionTest` a partir 
 
 - **Story n°6.4** : Implémentation des nouveautés au moteur graphique.  
 Ajout dans la méthode `evoluer()` d'une nouvelle condition pour vérifier les collisions.
+<div id="Fonctionnalite7"></div>
 
-
-#### Fonctionnalité n°7 : Terminer la partie (:x:)<div id="Fonctionnalite7"></div>
+#### Fonctionnalité n°7 : Terminer la partie (:x:)
 
 
 - **Story n°7.1** : Reflechir à ce l'on considere comme la fin de partie.  
