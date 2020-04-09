@@ -18,8 +18,16 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 
 ## Sommaire
 - [Semaine n°1 : du 23 au 27 février](#Semaine1)
+    * [Fonctionnalité n°1](#Fonctionnalite1)
 - [Semaine n°2 : du 30 février au 3 avril](#Semaine2)
+    * [Fonctionnalité n°2](#Fonctionnalite2)
+    * [Fonctionnalité n°3](#Fonctionnalite3)
 - [Semaine n°3 : du 6 au 10 avril](#Semaine3)
+    * [Fonctionnalité n°4](#Fonctionnalite4)
+    * [Fonctionnalité n°5](#Fonctionnalite5)
+- [Semaine n°4 : du 13 au 17 avril](#Semaine4)
+    * [Fonctionnalité n°6](#Fonctionnalite6)
+    * [Fonctionnalité n°7](#Fonctionnalite7)
 - [Glossaire](#Glossaire)
 
 
@@ -28,7 +36,7 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 
 ### Sprints et fonctionnalités réalisées 
 
-#### Fonctionnalité n°1 : Déplacer le vaisseau dans l'espace de jeu (:white_check_mark:)
+#### Fonctionnalité n°1 : Déplacer le vaisseau dans l'espace de jeu (:white_check_mark:)<div id="Fonctionnalite1"></div>
 
 
 - **Story n°1.1** : Créer un espace de jeu.  
@@ -85,7 +93,7 @@ Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une 
 
 ### Sprints et fonctionnalités réalisées 
 
-#### Fonctionnalité n°2 : Dimensionner le vaisseau (:white_check_mark:)
+#### Fonctionnalité n°2 : Dimensionner le vaisseau (:white_check_mark:)<div id="Fonctionnalite2"></div>
 
 
 - **Story n°2.1** : Positionner un nouveau vaisseau avec une dimension donnée.  
@@ -121,7 +129,7 @@ Implémentation de ces classes dans les classes `SpaceInvaders` et `Vaisseau`.
 #### Implémentation du moteur graphique Spique
 
 
-#### Fonctionnalité n°3 : Choisir la vitesse du vaisseau (:white_check_mark:)
+#### Fonctionnalité n°3 : Choisir la vitesse du vaisseau (:white_check_mark:)<div id="Fonctionnalite3"></div>
 
 
 - **Story n°3.1** : Comprendre ce qu'est la vitesse dans notre application et faire un choix de conception.  
@@ -180,7 +188,7 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 
 ### Sprints et fonctionnalités réalisées 
 
-#### Fonctionnalité n°4 : Tirer un missile depuis le vaisseau (:white_check_mark:)
+#### Fonctionnalité n°4 : Tirer un missile depuis le vaisseau (:white_check_mark:)<div id="Fonctionnalite4"></div>
 
 
 - **Story n°4.1** : Comprendre ce qu'est un missile et refactorer.  
@@ -207,7 +215,7 @@ Refactoring de la classe Sprite.
 Refactoring de la méthode `deplacerMissile` afin qu'elle lève une exception si le missile touche le haut de l'espace de jeu.
 
 
-#### Fonctionnalité n°5 : Ajouter un envahisseur dans le jeu (:white_check_mark:)
+#### Fonctionnalité n°5 : Ajouter un envahisseur dans le jeu (:white_check_mark:)<div id="Fonctionnalite5"></div>
 
 
 - **Story n°5.1** : Créer un envhisseur.  
@@ -258,13 +266,83 @@ Refactoring de la classe `DessinSpaceInvaders` pour ajouter l'envahisseur et ajo
 -------------
 
 
+## Semaine n°4 : du 13 au 17 avril<div id="Semaine4"></div>
+
+
+### Sprints et fonctionnalités réalisées 
+
+#### Fonctionnalité n°6 : Détecter une collision entre deux sprites (:white_check_mark:)<div id="Fonctionnalite6"></div>
+
+
+- **Story n°6.1** : Comprendre ce qu'est une collision.  
+Création d'une classe `Collision` avec une méthode `detecterCollision`.  
+Ajout du terme 'Collision' au [glossaire](#Glossaire).   
+Refactoring de la classe `SpaceInvaders`. 
+
+
+- **Story n°6.2** : Imaginer des situations a tester.  
+La collision peut s'effectuer par les 4 cotés car on considère les sprites comme des rectangles.
+
+
+- **Story n°6.3** : Comprendre ce que l'on considère comme une collision.  
+Création des différents tests dans la classe de test `CollisionTest` a partir des exemples de la **story 4.2**:
+    - collision par le bas;
+    - collision par le haut;
+    - collision par la droite;
+    - collision par la gauche;
+
+
+- **Story n°6.4** : Implémentation des nouveautés au moteur graphique.  
+Ajout dans la méthode `evoluer()` d'une nouvelle condition pour vérifier les collisions.
+
+
+#### Fonctionnalité n°7 : Terminer la partie (:x:)<div id="Fonctionnalite7"></div>
+
+
+- **Story n°7.1** : Reflechir à ce l'on considere comme la fin de partie.  
+On considère ici que la partie est terminée lorsqu'un missile percute l'envahisseur.  
+Ajout du terme 'Fin de partie' au [glossaire](#Glossaire).  
+
+
+- **Story n°7.2** : Implémenter la fin de partie.
+Refactorer la fin de partie dans la méthode `evoluer()`.
+
+
+### Fonctionnalité en cours d’implémentation : 
+Aucune
+
+
+### Diagramme de classes *(Fonctionnalités 6 et 7)*
+
+![Diagrammes de classes de la fonctionnalité n°6](Captures/spaceinvaders%20diagramme%20de%20classe%20capture%206.PNG)
+
+![Diagrammes de classes de la fonctionnalité n°7](Captures/spaceinvaders%20diagramme%20de%20classe%20capture%207.PNG)
+
+### Nuage de mots du projet spaceinvaders *(Fonctionnalités 6 et 7)*
+(généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/JavaBlacklist.txt) tous les deux fournis  par [Isabelle Blasquez](https://github.com/iblasquez))
+ 
+![Nuage de mots de la fonctionnalité n°6](Captures/spaceinvaders%20cloud%20capture%206.png)
+
+![Nuage de mots de la fonctionnalité n°7](Captures/spaceinvaders%20cloud%20capture%207.png)
+
+
+### Difficultés rencontrées 
+Detection de la collision entre deux sprites par manque d'indications.
+
+
+### Remarques diverses
+aucune.
+
+-------------
+
+
 ## Glossaire<div id="Glossaire"></div>
 
-* **Vaisseau** :  Véhicule commandé par le joueur, pouvant se déplacer de droite à gauche et ayant la possibilité de lancer des missiles destinés à détruire le(s) envahisseurs.
+* **Vaisseau** : Véhicule commandé par le joueur, pouvant se déplacer de droite à gauche et ayant la possibilité de lancer des missiles destinés à détruire le(s) envahisseurs.
 
-* **Envahisseur**  :  Ennemi qui apparaît à l'écran, se déplace automatiquement de droite à gauche et qui doit être détruit par un missile lancé depuis le vaisseau du joueur.
+* **Envahisseur** : Ennemi qui apparaît à l'écran, se déplace automatiquement de droite à gauche et qui doit être détruit par un missile lancé depuis le vaisseau du joueur.
 
-* **Missile** :  Projectile envoyé à la verticale par le vaisseau vers l'envahisseur dans le but de le détruire.
+* **Missile** : Projectile envoyé à la verticale par le vaisseau vers l'envahisseur dans le but de le détruire.
 
 * **Immobile** : Aucun déplacement, aucune exception levée : le sprite reste juste à sa position actuelle.
 
@@ -273,6 +351,10 @@ Refactoring de la classe `DessinSpaceInvaders` pour ajouter l'envahisseur et ajo
 * **Personnage** : Etre fictif et virtuel, contrôlé ou non par le joueur, qui apparaît dans un jeu vidéo.
 
 * **Sprite** : Elément graphique qui peut se deplacer sur l'ecran. Identifie les personnages et les objets qui se superposent au fond d'ecran et qui se deplassent.
+
+* **Collision** : Une collision est détectée lorsqu'un sprite se retrouve 'à cheval' sur un autre sprite.
+
+* **Fin de partie** : La fin de partie correspond à la collision entre deux sprites.
 
 ------------- 
 
