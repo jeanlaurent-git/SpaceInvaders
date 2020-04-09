@@ -20,10 +20,10 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 - [Semaine n°1 : du 23 au 27 février](#Semaine1)
 - [Semaine n°2 : du 30 février au 3 avril](#Semaine2)
 - [Semaine n°3 : du 6 au 10 avril](#Semaine3)
-- [Glossaire](#glossaire)
+- [Glossaire](#Glossaire)
 
 
-## <div id="Semaine1">Semaine n°1 : du 23 au 27 février</div>
+## Semaine n°1 : du 23 au 27 février<div id="Semaine1"></div>
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -80,7 +80,7 @@ Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une 
 -------------
 
 
-## <div id="Semaine2">Semaine n°2 : du 30 février au 3 avril</div>
+## Semaine n°2 : du 30 février au 3 avril<div id="Semaine2"></div>
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -125,7 +125,7 @@ Implémentation de ces classes dans les classes `SpaceInvaders` et `Vaisseau`.
 
 
 - **Story n°3.1** : Comprendre ce qu'est la vitesse dans notre application et faire un choix de conception.  
-Ajout de la définition de la vitesse au [glossaire](#glossaire-). 
+Ajout de la définition de la vitesse au [glossaire](#Glossaire). 
 
 
 - **Story n°3.2** : Ajouter la `vitesse` au `Vaisseau` sans régression de comportement.  
@@ -175,7 +175,7 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 -------------
 
 
-## <div id="Semaine3">Semaine n°3 : du 6 au 10 avril</div>
+## Semaine n°3 : du 6 au 10 avril<div id="Semaine3"></div>
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -185,7 +185,7 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 
 - **Story n°4.1** : Comprendre ce qu'est un missile et refactorer.  
 Création d'une superclasse `Sprite`. 
-Ajout des termes en lien avec le sprite au [glossaire](#glossaire-). 
+Ajout des termes en lien avec le sprite au [glossaire](#Glossaire). 
 Refactoring des classes `Vaisseau` et `Sprite`.
 
 
@@ -258,7 +258,7 @@ Refactoring de la classe `DessinSpaceInvaders` pour ajouter l'envahisseur et ajo
 -------------
 
 
-## Glossaire
+## Glossaire<div id="Glossaire"></div>
 
 * **Vaisseau** :  Véhicule commandé par le joueur, pouvant se déplacer de droite à gauche et ayant la possibilité de lancer des missiles destinés à détruire le(s) envahisseurs.
 
