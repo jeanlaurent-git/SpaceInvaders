@@ -1,6 +1,7 @@
 package fr.unilim.iut.spaceinvaders;
 
 import fr.unilim.iut.spaceinvaders.model.Dimension;
+import fr.unilim.iut.spaceinvaders.model.Direction;
 import fr.unilim.iut.spaceinvaders.model.Position;
 import fr.unilim.iut.spaceinvaders.model.SpaceInvaders;
 import fr.unilim.iut.spaceinvaders.utils.DebordementEspaceJeuException;
@@ -9,8 +10,7 @@ import fr.unilim.iut.spaceinvaders.utils.MissileException;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class SpaceInvadersTest {
     private SpaceInvaders spaceinvaders;
@@ -41,28 +41,28 @@ public class SpaceInvadersTest {
         try {
             spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1, 1), new Position(15, 9), 1);
             fail("Position trop à droite : devrait déclencher une exception HorsEspaceJeuException");
-        } catch (final HorsEspaceJeuException e) {
+        } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
             spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1, 1), new Position(-1, 9), 1);
             fail("Position trop à gauche : devrait déclencher une exception HorsEspaceJeuException");
-        } catch (final HorsEspaceJeuException e) {
+        } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
             spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1, 1), new Position(14, 10), 1);
             fail("Position trop en bas : devrait déclencher une exception HorsEspaceJeuException");
-        } catch (final HorsEspaceJeuException e) {
+        } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
             spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1, 1), new Position(14, -1), 1);
             fail("Position trop à haut : devrait déclencher une exception HorsEspaceJeuException");
-        } catch (final HorsEspaceJeuException e) {
+        } catch (final HorsEspaceJeuException ignored) {
         }
 
     }
@@ -89,14 +89,14 @@ public class SpaceInvadersTest {
         try {
             spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(9, 2), new Position(7, 9), 1);
             fail("Dépassement du vaisseau à droite en raison de sa longueur trop importante : devrait déclencher une exception DebordementEspaceJeuException");
-        } catch (final DebordementEspaceJeuException e) {
+        } catch (final DebordementEspaceJeuException ignored) {
         }
 
 
         try {
             spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 4), new Position(7, 1), 1);
             fail("Dépassement du vaisseau vers le haut en raison de sa hauteur trop importante : devrait déclencher une exception DebordementEspaceJeuException");
-        } catch (final DebordementEspaceJeuException e) {
+        } catch (final DebordementEspaceJeuException ignored) {
         }
     }
 
@@ -231,7 +231,7 @@ public class SpaceInvadersTest {
     }
 
     @Test(expected = MissileException.class)
-    public void test_PasAssezDePlacePourTirerUnMissile_UneExceptionEstLevee() throws Exception {
+    public void test_PasAssezDePlacePourTirerUnMissile_UneExceptionEstLevee() {
         spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7, 2), new Position(5, 9), 1);
         spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(7, 9), 1);
     }
@@ -287,28 +287,28 @@ public class SpaceInvadersTest {
         try {
             spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(1, 1), new Position(15, 9), 1);
             fail("Position trop à droite : devrait déclencher une exception HorsEspaceJeuException");
-        } catch (final HorsEspaceJeuException e) {
+        } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
             spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(1, 1), new Position(-1, 9), 1);
             fail("Position trop à gauche : devrait déclencher une exception HorsEspaceJeuException");
-        } catch (final HorsEspaceJeuException e) {
+        } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
             spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(1, 1), new Position(14, 10), 1);
             fail("Position trop en bas : devrait déclencher une exception HorsEspaceJeuException");
-        } catch (final HorsEspaceJeuException e) {
+        } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
             spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(1, 1), new Position(14, -1), 1);
             fail("Position trop à haut : devrait déclencher une exception HorsEspaceJeuException");
-        } catch (final HorsEspaceJeuException e) {
+        } catch (final HorsEspaceJeuException ignored) {
         }
 
     }
@@ -332,8 +332,8 @@ public class SpaceInvadersTest {
     @Test
     public void test_EnvahisseurAvance_DeplacerEnvahisseurVersLaGauche() {
 
-        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(7, 3), 1);
-        spaceinvaders.deplacerEnvahisseurVersLaGauche();
+        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(7, 3), 1, Direction.GAUCHE);
+        spaceinvaders.deplacerEnvahisseur();
 
         assertEquals("" +
                 "...............\n" +
@@ -351,8 +351,8 @@ public class SpaceInvadersTest {
     @Test
     public void test_EnvahisseurAvance_DeplacerEnvahisseurVersLaDroite() {
 
-        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(7, 3), 1);
-        spaceinvaders.deplacerEnvahisseurVersLaDroite();
+        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(7, 3), 1, Direction.DROITE);
+        spaceinvaders.deplacerEnvahisseur();
 
         assertEquals("" +
                 "...............\n" +
@@ -403,6 +403,32 @@ public class SpaceInvadersTest {
                 "...............\n" +
                 "...............\n" +
                 "...............\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
+    }
+
+    @Test
+    public void test_LeJeuSeTermineEnCasDeCollisionEntreLeMissileEtLEnvahisseur() {
+        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(4, 2), new Position(7, 9), 1);
+        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(5, 2), new Position(7, 2), 1);
+        spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(3, 2), 1);
+
+        for (int i = 0; i < 4; i++) {
+            spaceinvaders.deplacerMissile();
+        }
+        spaceinvaders.evoluer(null);
+        assertTrue(spaceinvaders.etreFini());
+    }
+
+    @Test
+    public void test_LeJeuNeSeTerminePasSiNonCollision() {
+        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(4, 9), 1);
+        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(5, 1), 1);
+        spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(1, 2), 1);
+
+        for (int i = 0; i < 4; i++) {
+            spaceinvaders.deplacerMissile();
+        }
+        spaceinvaders.evoluer(null);
+        assertFalse(spaceinvaders.etreFini());
     }
 
 }
