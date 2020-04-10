@@ -291,7 +291,7 @@ La collision peut s'effectuer par les 4 cotés car on considère les sprites com
 
 
 - **Story n°6.3** : Comprendre ce que l'on considère comme une collision.  
-Création des différents tests dans la classe de test `CollisionTest` a partir des exemples de la **story 4.2**:
+Création des différents tests dans la classe de test `CollisionTest` a partir des exemples de la **story 6.2**:
     - collision par le bas;
     - collision par le haut;
     - collision par la droite;
@@ -364,3 +364,4 @@ aucune.
 
 ------------- 
 
+> Créé par [**Jean Laurent**](https://github.com/jeanlrnt) en première année de DUT Informatique à Limoges. Projet proposé par [Isabelle Blasquez](https://github.com/iblasquez).
