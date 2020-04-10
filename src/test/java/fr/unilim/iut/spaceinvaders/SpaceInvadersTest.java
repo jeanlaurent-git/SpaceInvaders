@@ -36,28 +36,28 @@ public class SpaceInvadersTest {
     public void test_UnNouveauVaisseauPositionneHorsEspaceJeu_DoitLeverUneException() {
 
         try {
-            spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1, 1), new Position(15, 9), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(1, 1), new Position(15, 9), 1, true);
             fail("Position trop à droite : devrait déclencher une exception HorsEspaceJeuException");
         } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
-            spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1, 1), new Position(-1, 9), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(1, 1), new Position(-1, 9), 1, true);
             fail("Position trop à gauche : devrait déclencher une exception HorsEspaceJeuException");
         } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
-            spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1, 1), new Position(14, 10), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(1, 1), new Position(14, 10), 1, true);
             fail("Position trop en bas : devrait déclencher une exception HorsEspaceJeuException");
         } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
-            spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1, 1), new Position(14, -1), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(1, 1), new Position(14, -1), 1, true);
             fail("Position trop à haut : devrait déclencher une exception HorsEspaceJeuException");
         } catch (final HorsEspaceJeuException ignored) {
         }
@@ -66,7 +66,7 @@ public class SpaceInvadersTest {
 
     @Test
     public void test_unNouveauVaisseauEstCorrectementPositionneDansEspaceJeu() {
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(7, 9), 1);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(3, 2), new Position(7, 9), 1, true);
         assertEquals("" +
                 "...............\n" +
                 "...............\n" +
@@ -84,14 +84,14 @@ public class SpaceInvadersTest {
     public void test_UnNouveauVaisseauPositionneDansEspaceJeuMaisAvecDimensionTropGrande_DoitLeverUneExceptionDeDebordement() {
 
         try {
-            spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(9, 2), new Position(7, 9), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(9, 2), new Position(7, 9), 1, true);
             fail("Dépassement du vaisseau à droite en raison de sa longueur trop importante : devrait déclencher une exception DebordementEspaceJeuException");
         } catch (final DebordementEspaceJeuException ignored) {
         }
 
 
         try {
-            spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 4), new Position(7, 1), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(3, 4), new Position(7, 1), 1, true);
             fail("Dépassement du vaisseau vers le haut en raison de sa hauteur trop importante : devrait déclencher une exception DebordementEspaceJeuException");
         } catch (final DebordementEspaceJeuException ignored) {
         }
@@ -100,7 +100,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_VaisseauAvance_DeplacerVaisseauVersLaGauche() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(7, 9), 3);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(3, 2), new Position(7, 9), 3, true);
         spaceinvaders.deplacerVaisseauVersLaGauche();
 
         assertEquals("" +
@@ -119,7 +119,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_VaisseauImmobile_DeplacerVaisseauVersLaGauche() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(0, 9), 3);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(3, 2), new Position(0, 9), 3, true);
         spaceinvaders.deplacerVaisseauVersLaGauche();
 
         assertEquals("" +
@@ -138,7 +138,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_VaisseauAvancePartiellement_DeplacerVaisseauVersLaGauche() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(1, 9), 3);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(3, 2), new Position(1, 9), 3, true);
         spaceinvaders.deplacerVaisseauVersLaGauche();
 
         assertEquals("" +
@@ -157,7 +157,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(7, 9), 3);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(3, 2), new Position(7, 9), 3, true);
         spaceinvaders.deplacerVaisseauVersLaDroite();
         assertEquals("" +
                 "...............\n" +
@@ -175,7 +175,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_VaisseauImmobile_DeplacerVaisseauVersLaDroite() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(12, 9), 3);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(3, 2), new Position(12, 9), 3, true);
         spaceinvaders.deplacerVaisseauVersLaDroite();
         assertEquals("" +
                 "...............\n" +
@@ -193,7 +193,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_VaisseauAvancePartiellement_DeplacerVaisseauVersLaDroite() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(10, 9), 3);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(3, 2), new Position(10, 9), 3, true);
         spaceinvaders.deplacerVaisseauVersLaDroite();
         assertEquals("" +
                 "...............\n" +
@@ -211,7 +211,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_MissileBienTireDepuisVaisseau_VaisseauLongueurImpaireMissileLongueurImpaire() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7, 2), new Position(5, 9), 2);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(7, 2), new Position(5, 9), 2, true);
         spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(3, 2), 2);
 
         assertEquals("" +
@@ -229,14 +229,14 @@ public class SpaceInvadersTest {
 
     @Test(expected = MissileException.class)
     public void test_PasAssezDePlacePourTirerUnMissile_UneExceptionEstLevee() {
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7, 2), new Position(5, 9), 1);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(7, 2), new Position(5, 9), 1, true);
         spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(7, 9), 1);
     }
 
     @Test
     public void test_MissileAvanceAutomatiquement_ApresTirDepuisLeVaisseau() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7, 2), new Position(5, 9), 2);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(7, 2), new Position(5, 9), 2, true);
         spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(3, 2), 2);
 
         spaceinvaders.deplacerMissile(Direction.HAUT_ECRAN);
@@ -257,7 +257,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_MissileDisparait_QuandIlCommenceASortirDeEspaceJeu() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7, 2), new Position(5, 9), 1);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(7, 2), new Position(5, 9), 1, true);
         spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(3, 2), 1);
         for (int i = 1; i <= 6; i++) {
             spaceinvaders.deplacerMissile(Direction.HAUT_ECRAN);
@@ -282,28 +282,28 @@ public class SpaceInvadersTest {
     public void test_UnNouveauEnvahisseurPositionneHorsEspaceJeu_DoitLeverUneException() {
 
         try {
-            spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(1, 1), new Position(15, 9), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(1, 1), new Position(15, 9), 1, false);
             fail("Position trop à droite : devrait déclencher une exception HorsEspaceJeuException");
         } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
-            spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(1, 1), new Position(-1, 9), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(1, 1), new Position(-1, 9), 1, false);
             fail("Position trop à gauche : devrait déclencher une exception HorsEspaceJeuException");
         } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
-            spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(1, 1), new Position(14, 10), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(1, 1), new Position(14, 10), 1, false);
             fail("Position trop en bas : devrait déclencher une exception HorsEspaceJeuException");
         } catch (final HorsEspaceJeuException ignored) {
         }
 
 
         try {
-            spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(1, 1), new Position(14, -1), 1);
+            spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(1, 1), new Position(14, -1), 1, false);
             fail("Position trop à haut : devrait déclencher une exception HorsEspaceJeuException");
         } catch (final HorsEspaceJeuException ignored) {
         }
@@ -312,7 +312,7 @@ public class SpaceInvadersTest {
 
     @Test
     public void test_unNouveauEnvahisseurAvecUneDimensionEstCorrectementPositionneDansEspaceJeu() {
-        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(7, 3), 1);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(2, 2), new Position(7, 3), 1, false);
         assertEquals("" +
                 "...............\n" +
                 "...............\n" +
@@ -329,7 +329,8 @@ public class SpaceInvadersTest {
     @Test
     public void test_EnvahisseurAvance_DeplacerEnvahisseurVersLaGauche() {
 
-        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(7, 3), 1, Direction.GAUCHE);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(2, 2), new Position(7, 3), 1, false);
+        spaceinvaders.recupererEnvahisseur().setDirection(Direction.GAUCHE);
         spaceinvaders.deplacerEnvahisseur();
 
         assertEquals("" +
@@ -348,7 +349,8 @@ public class SpaceInvadersTest {
     @Test
     public void test_EnvahisseurAvance_DeplacerEnvahisseurVersLaDroite() {
 
-        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(7, 3), 1, Direction.DROITE);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(2, 2), new Position(7, 3), 1, false);
+        spaceinvaders.recupererEnvahisseur().setDirection(Direction.DROITE);
         spaceinvaders.deplacerEnvahisseur();
 
         assertEquals("" +
@@ -367,7 +369,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_EnvahisseurAvance_EnvahisseurFaitDemiTourQuandIlToucheLeBordDroit() {
 
-        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(13, 3), 1);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(2, 2), new Position(13, 3), 1, false);
         spaceinvaders.deplacerEnvahisseur();
 
         assertEquals("" +
@@ -386,7 +388,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_EnvahisseurAvance_EnvahisseurFaitDemiTourQuandIlToucheLeBordGauche() {
 
-        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(0, 3), 1);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(2, 2), new Position(0, 3), 1, false);
         spaceinvaders.deplacerEnvahisseur();
 
         assertEquals("" +
@@ -404,8 +406,8 @@ public class SpaceInvadersTest {
 
     @Test
     public void test_LeJeuSeTermineEnCasDeCollisionEntreLeMissileEtLEnvahisseur() {
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(4, 2), new Position(7, 9), 1);
-        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(5, 2), new Position(7, 2), 1);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(4, 2), new Position(7, 9), 1, true);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(5, 2), new Position(7, 2), 1, false);
         spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(3, 2), 1);
 
         for (int i = 0; i < 4; i++) {
@@ -417,8 +419,8 @@ public class SpaceInvadersTest {
 
     @Test
     public void test_LeJeuNeSeTerminePasSiNonCollision() {
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(4, 9), 1);
-        spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimension(2, 2), new Position(5, 1), 1);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(3, 2), new Position(4, 9), 1, true);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(2, 2), new Position(5, 1), 1, false);
         spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(1, 2), 1);
 
         for (int i = 0; i < 4; i++) {
@@ -431,7 +433,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_MissilesBienTiresDepuisVaisseau() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(5,2),new Position(5,9), 2);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(5,2),new Position(5,9), 2, true);
 
         spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(3,2), 2);
         Vaisseau vaisseau = spaceinvaders.recupererVaisseau();
@@ -456,7 +458,7 @@ public class SpaceInvadersTest {
     @Test
     public void test_MissileNonTireDepuisVaisseau_PresenceDeMissilesEnBasEcran() {
 
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(5,2),new Position(5,9), 2);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(5,2),new Position(5,9), 2, true);
 
         spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(3,2), 2);
         Vaisseau vaisseau = spaceinvaders.recupererVaisseau();

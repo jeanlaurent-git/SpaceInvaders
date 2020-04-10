@@ -33,8 +33,8 @@ public class SpaceInvaders implements Jeu {
         Position positionEnvahisseur = new Position(Constante.ESPACE_JEU_LONGUEUR / 2,
                 Constante.ENVAHISSEUR_HAUTEUR + this.hauteur / 100);
         Dimension dimensionEnvahisseur = new Dimension(Constante.ENVAHISSEUR_LONGUEUR, Constante.ENVAHISSEUR_HAUTEUR);
-        positionnerUnNouveauVaisseau(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE);
-        positionnerUnNouveauEnvahisseur(dimensionEnvahisseur, positionEnvahisseur, Constante.ENVAHISSEUR_VITESSE);
+        positionnerUnNouveauPersonnage(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE, true);
+        positionnerUnNouveauPersonnage(dimensionEnvahisseur, positionEnvahisseur, Constante.ENVAHISSEUR_VITESSE, false);
     }
 
     public String recupererEspaceJeuDansChaineASCII() {
@@ -74,12 +74,7 @@ public class SpaceInvaders implements Jeu {
         return !this.missiles.isEmpty();
     }
 
-    public void positionnerUnNouveauEnvahisseur(Dimension dimension, Position position, int vitesse) {
-        this.positionnerUnNouveauEnvahisseur(dimension, position, vitesse, Direction.DROITE);
-    }
-
-    public void positionnerUnNouveauEnvahisseur(Dimension dimension, Position position, int vitesse, Direction direction) {
-
+    public void positionnerUnNouveauPersonnage(Dimension dimension, Position position, int vitesse, boolean estUnVaisseau) {
         int x = position.abscisse();
         int y = position.ordonnee();
 
@@ -96,29 +91,8 @@ public class SpaceInvaders implements Jeu {
             throw new DebordementEspaceJeuException(
                     "L'envahisseur déborde de l'espace jeu vers le bas à cause de sa hauteur");
 
-        envahisseur = new Envahisseur(dimension, position, vitesse, direction);
-    }
-
-
-    public void positionnerUnNouveauVaisseau(Dimension dimension, Position position, int vitesse) {
-
-        int x = position.abscisse();
-        int y = position.ordonnee();
-
-        if (estHorsEspaceJeu(x, y))
-            throw new HorsEspaceJeuException("La position du vaisseau est en dehors de l'espace jeu");
-
-        int longueurVaisseau = dimension.longueur();
-        int hauteurVaisseau = dimension.hauteur();
-
-        if (estHorsEspaceJeu(x + longueurVaisseau - 1, y))
-            throw new DebordementEspaceJeuException(
-                    "Le vaisseau déborde de l'espace jeu vers la droite à cause de sa longueur");
-        if (estHorsEspaceJeu(x, y - hauteurVaisseau + 1))
-            throw new DebordementEspaceJeuException(
-                    "Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
-
-        vaisseau = new Vaisseau(dimension, position, vitesse);
+        if (!estUnVaisseau) envahisseur = new Envahisseur(dimension, position, vitesse);
+        else if (estUnVaisseau) vaisseau = new Vaisseau(dimension, position, vitesse);
     }
 
     private boolean estHorsEspaceJeu(int x, int y) {
@@ -219,7 +193,7 @@ public class SpaceInvaders implements Jeu {
         for (Missile missile: this.missiles) {
             if (this.aUnEnvahisseur() && this.aDesMissiles() && (new Collision()).detecterCollision(envahisseur, missile)) {
                 this.envahisseur = null;
-                this.missiles.remove(missile);
+                this.missiles = null;
                 this.partieFinie = true;
             }
         }
