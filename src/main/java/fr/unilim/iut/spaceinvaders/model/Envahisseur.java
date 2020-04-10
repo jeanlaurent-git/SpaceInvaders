@@ -1,6 +1,6 @@
 package fr.unilim.iut.spaceinvaders.model;
 
-public class Envahisseur extends Sprite {
+public class Envahisseur extends Personnage {
     Direction direction;
 
     public Envahisseur(Dimension dimension, Position origine, int vitesse, Direction direction) {
