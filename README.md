@@ -364,3 +364,4 @@ aucune.
 
 ------------- 
 
+> Créé par [**Jean Laurent**](https://github.com/jeanlrnt) en première année de DUT Informatique à Limoges. Projet proposé par [Isabelle Blasquez](https://github.com/iblasquez).
