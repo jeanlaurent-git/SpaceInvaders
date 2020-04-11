@@ -30,6 +30,8 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
     * [Fonctionnalité n°6](#Fonctionnalite6)
     * [Fonctionnalité n°7](#Fonctionnalite7)
     * [Fonctionnalité n°8](#Fonctionnalite8)
+- [Semaine n°5 : du 20 au 24 avril](#Semaine5)
+    * [Fonctionnalité n°9](#Fonctionnalite9)
 - [Glossaire](#Glossaire)
 - [Annexes](#Annexes)
 
@@ -368,6 +370,62 @@ Implémentation de la Liste de missiles.
 
 ### Remarques diverses
 aucune.
+
+
+-------------
+
+
+## Semaine n°5 : du 20 au 24 avril<div id="Semaine5"></div>
+
+
+### Sprints et fonctionnalités réalisées 
+<div id="Fonctionnalite9"></div>
+
+#### Fonctionnalité n°9 : Envoyer une ligne d'envahisseurs (:white_check_mark:)
+
+
+- **Story n°9.1** : Déterminer ce qu'est une ligne d'envahisseurs.  
+Une ligne d'envahisseurs correspond a l'ajout sur l'axe horizontal d'envahisseurs identiques tous séparés par une 
+distance correspondant à la moitié de la longueur de l'envahisseur original.  
+
+
+- **Story n°9.2** : Tests.  
+Mise en place de tests qui prennent en compte la taille de la ligne d'envahisseurs.  
+Tests aux limites (gauche et droite).  
+Tests de demi-tour appliqué à la ligne et non a chaque envahisseur.  
+Test de collision pour la suppression que de l'envahisseur touché.  
+
+
+- **Story n°9.3** : Ajout de contenu.  
+Transformation de l'attribut `envahisseur` en `envahisseurs` de type `Liste<Envahisseurs>`.  
+Ajout de la méthode `positionnerUneNouvelleLigneEnvahisseurs(Position, Envahisseur, int)` qui ajoute une ligne 
+d'envahisseurs séparés par la moitié de la longueur d'un envahisseur.  
+Refactoring des méthodes des classes `SpaceInvaders` et `DessinSpaceInvaders` pour implémenter la liste d'envahisseurs.  
+
+
+- **Story n°9.4** : Constantes
+Ajout des constantes `ENVAHISSEUR_POSITION_X`, `ENVAHISSEUR_POSITION_Y` et `ENVHISSEUR_PARLIGNE`  
+
+
+### Fonctionnalité en cours d’implémentation : 
+Aucune
+
+
+### Diagramme de classes *(Fonctionnalité 9)*
+
+![Diagrammes de classes de la fonctionnalité n°9](ressources/Captures/spaceinvaders%20diagramme%20de%20classe%20capture%209.PNG)
+
+### Nuage de mots du projet spaceinvaders *(Fonctionnalité 9)*
+(généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](ressources/JavaBlacklist.txt) tous les deux fournis par [Isabelle Blasquez](https://github.com/iblasquez))
+ 
+![Nuage de mots de la fonctionnalité n°9](ressources/Captures/spaceinvaders%20cloud%20capture%209.png)
+
+
+### Difficultés rencontrées  
+Aucune
+
+### Remarques diverses  
+Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une fonctionnalité supplémentaire qui permet de représenter l’espace de jeu dans une chaîne ASCII.
 
 
 -------------

@@ -15,7 +15,10 @@ public class Constante {
 
     public static final int ENVAHISSEUR_LONGUEUR = 50;
     public static final int ENVAHISSEUR_HAUTEUR = 50;
-    public static final int ENVAHISSEUR_VITESSE = 5;
+    public static final int ENVAHISSEUR_POSITION_X = 50;
+    public static final int ENVAHISSEUR_POSITION_Y = 100;
+    public static final int ENVAHISSEUR_VITESSE = 2;
+    public static final int ENVAHISSEUR_PARLIGNE = 10;
 
     public static final char MARQUE_FIN_LIGNE = '\n';
     public static final char MARQUE_VIDE = '.';

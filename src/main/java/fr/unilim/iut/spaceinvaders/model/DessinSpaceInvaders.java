@@ -29,9 +29,9 @@ public class DessinSpaceInvaders implements DessinJeu {
             this.dessinerUnMissile(missiles, image);
         }
 
-        if (this.jeu.aUnEnvahisseur()) {
-            Envahisseur envahisseur = this.jeu.recupererEnvahisseur();
-            this.dessinerUnEnvahisseur(envahisseur, image);
+        if (this.jeu.aDesEnvahisseurs()) {
+            List<Envahisseur> envahisseurs = this.jeu.recupererEnvahisseurs();
+            this.dessinerUnEnvahisseur(envahisseurs, image);
         }
 
         if (this.jeu.etreFini()) {
@@ -39,12 +39,14 @@ public class DessinSpaceInvaders implements DessinJeu {
         }
     }
 
-    private void dessinerUnEnvahisseur(Envahisseur envahisseur, BufferedImage image) {
+    private void dessinerUnEnvahisseur(List<Envahisseur> envahisseurs, BufferedImage image) {
         Graphics2D crayon = (Graphics2D) image.getGraphics();
 
         crayon.setColor(Color.red);
-        crayon.fillRect(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusBasse(), envahisseur.longueur(),
-                envahisseur.hauteur());
+        for (Envahisseur envahisseur: envahisseurs) {
+            crayon.fillRect(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusBasse(), envahisseur.longueur(),
+                    envahisseur.hauteur());
+        }
 
     }
 
