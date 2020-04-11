@@ -403,7 +403,7 @@ d'envahisseurs séparés par la moitié de la longueur d'un envahisseur.
 Refactoring des méthodes des classes `SpaceInvaders` et `DessinSpaceInvaders` pour implémenter la liste d'envahisseurs.  
 
 
-- **Story n°9.4** : Constantes
+- **Story n°9.4** : Constantes.  
 Ajout des constantes `ENVAHISSEUR_POSITION_X`, `ENVAHISSEUR_POSITION_Y` et `ENVHISSEUR_PARLIGNE`  
 
 
@@ -425,7 +425,7 @@ Aucune
 Aucune
 
 ### Remarques diverses  
-Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une fonctionnalité supplémentaire qui permet de représenter l’espace de jeu dans une chaîne ASCII.
+aucune
 
 
 -------------
