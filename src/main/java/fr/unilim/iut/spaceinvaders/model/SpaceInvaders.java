@@ -18,6 +18,7 @@ public class SpaceInvaders implements Jeu {
     long timerMissile;
     List<Envahisseur> envahisseurs;
     boolean partieFinie;
+    int score;
 
     public SpaceInvaders(int longueur, int hauteur) {
         this.longueur = longueur;
@@ -30,14 +31,14 @@ public class SpaceInvaders implements Jeu {
     public void initialiserJeu() {
         this.partieFinie = false;
 
-        Position positionVaisseau = new Position(Constante.ESPACE_JEU_LONGUEUR / 2, Constante.ESPACE_JEU_HAUTEUR - 1);
         Dimension dimensionVaisseau = new Dimension(Constante.VAISSEAU_LONGUEUR, Constante.VAISSEAU_HAUTEUR);
+        Position positionVaisseau = new Position(Constante.ESPACE_JEU_LONGUEUR / 2, Constante.ESPACE_JEU_HAUTEUR - 1);
         Dimension dimensionEnvahisseur = new Dimension(Constante.ENVAHISSEUR_LONGUEUR, Constante.ENVAHISSEUR_HAUTEUR);
-        Position positioEnvahisseur = new Position(Constante.ENVAHISSEUR_POSITION_X, Constante.ENVAHISSEUR_POSITION_Y);
+        Position positionEnvahisseur = new Position(Constante.ENVAHISSEUR_POSITION_X, Constante.ENVAHISSEUR_POSITION_Y);
 
-        Envahisseur envahisseur = new Envahisseur(dimensionEnvahisseur, positioEnvahisseur, Constante.ENVAHISSEUR_VITESSE);
+        Envahisseur envahisseur = new Envahisseur(dimensionEnvahisseur, positionEnvahisseur, Constante.ENVAHISSEUR_VITESSE);
         positionnerUnNouveauPersonnage(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE, true);
-        positionnerUneNouvelleLigneEnvahisseurs(positioEnvahisseur, envahisseur, Constante.ENVAHISSEUR_PARLIGNE);
+        positionnerUneNouvelleLigneEnvahisseurs(positionEnvahisseur, envahisseur, Constante.ENVAHISSEUR_PARLIGNE);
     }
 
     public String recupererEspaceJeuDansChaineASCII() {
@@ -240,6 +241,7 @@ public class SpaceInvaders implements Jeu {
             if (this.aDesEnvahisseurs() && this.aDesMissiles() && (new Collision()).detecterCollision(envahisseurs.get(i), missiles.get(0))) {
                 envahisseurs.remove(i);
                 this.missiles.remove(0);
+                this.augmenterScore(Constante.SCORE_DETRUIREENVAHISSEUR);
             }
         }
 
@@ -252,6 +254,18 @@ public class SpaceInvaders implements Jeu {
     @Override
     public boolean etreFini() {
         return this.partieFinie;
+    }
+
+    public void augmenterScore(int difference) {
+        this.score += difference;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int recupererScore() {
+        return this.score;
     }
 
     public Vaisseau recupererVaisseau() {

@@ -519,4 +519,18 @@ public class SpaceInvadersTest {
                 "......VVVV.....\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
     }
 
+    @Test
+    public void test_uneCollisionEntreUnMissileEtUnEnvahisseurSupprimeLeMissileEtLEnvahisseur_etAugmenteLeScore() {
+        Envahisseur envahisseur = new Envahisseur(new Dimension(2,2), new Position(4,3), 1);
+        spaceinvaders.positionnerUneNouvelleLigneEnvahisseurs(new Position(4, 3), envahisseur, 3);
+        spaceinvaders.positionnerUnNouveauPersonnage(new Dimension(4,2), new Position(6,9), 1, true);
+        spaceinvaders.tirerUnMissileDepuisLeVaisseau(new Dimension(2,2), 1);
+        for (int i = 0; i < 3; i++) {
+            spaceinvaders.deplacerMissile(Direction.HAUT_ECRAN);
+        }
+        spaceinvaders.evoluer(null);
+
+        assertEquals(20, spaceinvaders.recupererScore());
+    }
+
 }
