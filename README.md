@@ -32,6 +32,7 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
     * [Fonctionnalité n°8](#Fonctionnalite8)
 - [Semaine n°5 : du 20 au 24 avril](#Semaine5)
     * [Fonctionnalité n°9](#Fonctionnalite9)
+    * [Fonctionnalité n°10](#Fonctionnalite10)
 - [Glossaire](#Glossaire)
 - [Annexes](#Annexes)
 
@@ -405,27 +406,50 @@ Refactoring des méthodes des classes `SpaceInvaders` et `DessinSpaceInvaders` p
 
 - **Story n°9.4** : Constantes
 Ajout des constantes `ENVAHISSEUR_POSITION_X`, `ENVAHISSEUR_POSITION_Y` et `ENVHISSEUR_PARLIGNE`  
+<div id="Fonctionnalite10"></div>
+
+#### Fonctionnalité n°10 : Ajouter le score (:white_check_mark:)
+
+
+- **Story n°10.1** : Reflexion.  
+Le score est augmenté de 20 a chaque fois qu'un envahisseur est tué.  
+La valeur de 20 a été choisie pour avoir une marge plus grande pour choisir les points à attribuer au joueur quand il tirera sur les missiles ennemis ou autres.
+
+
+- **Story n°10.2** : Tests.  
+Ajout d'un test qui vérifie que le sore augmente bien de 20 quand un missile percute un ennemi.  
+
+
+- **Story n°10.3** : Ajouts.  
+Ajout d'un attribut `score` à la classe `SpaceInvaders` qui est mis a 0 lors de la création du jeu.  
+
+
+- **Story n°10.4** : Refactoring.  
+Révision de la classe `DessinSpaceInvaders` pour ajouter l'affichage du score en haut à gauche.  
 
 
 ### Fonctionnalité en cours d’implémentation : 
 Aucune
 
 
-### Diagramme de classes *(Fonctionnalité 9)*
+### Diagramme de classes *(Fonctionnalités 9 et 10)*
 
 ![Diagrammes de classes de la fonctionnalité n°9](ressources/Captures/spaceinvaders%20diagramme%20de%20classe%20capture%209.PNG)
 
-### Nuage de mots du projet spaceinvaders *(Fonctionnalité 9)*
+![Diagrammes de classes de la fonctionnalité n°10](ressources/Captures/spaceinvaders%20diagramme%20de%20classe%20capture%2010.PNG)
+
+### Nuage de mots du projet spaceinvaders *(Fonctionnalités 9 et 10)*
 (généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](ressources/JavaBlacklist.txt) tous les deux fournis par [Isabelle Blasquez](https://github.com/iblasquez))
  
 ![Nuage de mots de la fonctionnalité n°9](ressources/Captures/spaceinvaders%20cloud%20capture%209.png)
 
+![Nuage de mots de la fonctionnalité n°10](ressources/Captures/spaceinvaders%20cloud%20capture%2010.png)
 
 ### Difficultés rencontrées  
 Aucune
 
 ### Remarques diverses  
-Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une fonctionnalité supplémentaire qui permet de représenter l’espace de jeu dans une chaîne ASCII.
+Aucune
 
 
 -------------
@@ -461,9 +485,10 @@ Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une 
 
 - [JavaBlacklist.txt](ressources/JavaBlacklist.txt)  
 - [Ressources graphiques](ressources/Captures)
+- [Consignes](https://github.com/iblasquez/tdd_SpaceInvaders)
 
 
 -------------
 
 
-> Créé par [**Jean Laurent**](https://github.com/jeanlrnt) en première année de DUT Informatique à Limoges. Projet proposé par [Isabelle Blasquez](https://github.com/iblasquez).
+> Créé par [**Jean Laurent**](https://github.com/jeanlrnt) en première année de DUT Informatique à Limoges *pendant l'année universitaire 2019-2020*. Projet proposé par [Isabelle Blasquez](https://github.com/iblasquez).  
