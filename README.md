@@ -135,7 +135,7 @@ Implémentation de ces classes dans les classes `SpaceInvaders` et `Vaisseau`.
 
 <div id="MoteurGraphique"></div>
 
-#### Implémentation du moteur graphique Spique
+#### Implémentation du moteur graphique Zeldiablo
 <div id="Fonctionnalite3"></div>
 
 #### Fonctionnalité n°3 : Choisir la vitesse du vaisseau (:white_check_mark:)
