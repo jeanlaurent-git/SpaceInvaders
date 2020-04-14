@@ -24,14 +24,19 @@ public class DessinSpaceInvaders implements DessinJeu {
                 this.dessinerUnVaisseau(vaisseau, image);
             }
 
-            if (this.jeu.aDesMissiles()) {
-                List<Missile> missiles = this.jeu.recupererMissiles();
-                this.dessinerUnMissile(missiles, image);
+            if (this.jeu.aDesMissilesAllie()) {
+                List<MissileVaisseau> missiles = this.jeu.recupererMissilesVaisseau();
+                this.dessinerUnMissileAllie(missiles, image);
             }
 
             if (this.jeu.aDesEnvahisseurs()) {
                 List<Envahisseur> envahisseurs = this.jeu.recupererEnvahisseurs();
                 this.dessinerUnEnvahisseur(envahisseurs, image);
+            }
+
+            if (this.jeu.aDesMissilesEnnemi()) {
+                List<MissileEnvahisseur> missiles = this.jeu.recupererMissilesEnvahisseur();
+                this.dessinerUnMissileEnnemi(missiles, image);
             }
 
         }
@@ -47,7 +52,7 @@ public class DessinSpaceInvaders implements DessinJeu {
     private void dessinerUnEnvahisseur(List<Envahisseur> envahisseurs, BufferedImage image) {
         Graphics2D crayon = (Graphics2D) image.getGraphics();
 
-        crayon.setColor(Color.red);
+        crayon.setColor(Color.magenta);
         for (Envahisseur envahisseur : envahisseurs) {
             crayon.fillRect(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusBasse(), envahisseur.longueur(),
                     envahisseur.hauteur());
@@ -56,6 +61,7 @@ public class DessinSpaceInvaders implements DessinJeu {
     }
 
     private void dessinerUnVaisseau(Vaisseau vaisseau, BufferedImage image) {
+
         Graphics2D crayon = (Graphics2D) image.getGraphics();
 
         crayon.setColor(Color.gray);
@@ -64,11 +70,22 @@ public class DessinSpaceInvaders implements DessinJeu {
 
     }
 
-    private void dessinerUnMissile(List<Missile> missiles, BufferedImage image) {
+    private void dessinerUnMissileAllie(List<MissileVaisseau> missiles, BufferedImage image) {
         Graphics2D crayon = (Graphics2D) image.getGraphics();
 
         crayon.setColor(Color.blue);
-        for (Missile missile : missiles) {
+        for (MissileVaisseau missile : missiles) {
+            crayon.fillRect(missile.abscisseLaPlusAGauche(), missile.ordonneeLaPlusBasse(), missile.longueur(),
+                    missile.hauteur());
+        }
+
+    }
+
+    private void dessinerUnMissileEnnemi(List<MissileEnvahisseur> missiles, BufferedImage image) {
+        Graphics2D crayon = (Graphics2D) image.getGraphics();
+
+        crayon.setColor(Color.red);
+        for (MissileEnvahisseur missile : missiles) {
             crayon.fillRect(missile.abscisseLaPlusAGauche(), missile.ordonneeLaPlusBasse(), missile.longueur(),
                     missile.hauteur());
         }
@@ -78,8 +95,8 @@ public class DessinSpaceInvaders implements DessinJeu {
     private void dessinerMessageDeFin(BufferedImage image) {
         Graphics2D crayon = (Graphics2D) image.getGraphics();
         crayon.setColor(Color.BLACK);
-        crayon.setFont(new Font(Constante.MESSAGE_FIN_FONT, Font.PLAIN, Constante.MESSAGE_FIN_TAILLE));
-        crayon.drawString(Constante.MESSAGE_FIN_TEXT, Constante.ESPACE_JEU_LONGUEUR / 5, Constante.ESPACE_JEU_HAUTEUR / 2);
+        crayon.setFont(new Font(Constante.MESSAGE_VICTOIRE_FONT, Font.PLAIN, Constante.MESSAGE_VICTOIRE_TAILLE));
+        crayon.drawString(Constante.MESSAGE_VICTOIRE_TEXT, Constante.ESPACE_JEU_LONGUEUR / 5, Constante.ESPACE_JEU_HAUTEUR / 2);
     }
 
     private void dessinerLeScore(BufferedImage image) {

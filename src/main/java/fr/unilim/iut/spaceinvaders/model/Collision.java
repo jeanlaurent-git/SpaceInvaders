@@ -2,39 +2,39 @@ package fr.unilim.iut.spaceinvaders.model;
 
 public class Collision {
 
-    public boolean detecterCollision(Sprite spriteStatique, Sprite spriteMobile) {
-        return this.spriteToucheParSprite(spriteStatique, spriteMobile);
+    public boolean detecterCollision(Sprite spriteTouche, Sprite spriteToucheur) {
+        return this.spriteToucheParSprite(spriteTouche, spriteToucheur);
     }
 
-    private boolean spriteToucheParSprite(Sprite spriteStatique, Sprite spriteMobile) {
-        return ((this.spriteToucheEnBasParSprite(spriteStatique, spriteMobile) &&
-                spriteToucheHorizontalementParSprite(spriteStatique, spriteMobile))
-                || (this.spriteToucheEnHautParSprite(spriteStatique, spriteMobile) &&
-                spriteToucheHorizontalementParSprite(spriteStatique, spriteMobile)));
+    private boolean spriteToucheParSprite(Sprite spriteTouche, Sprite spriteToucheur) {
+        return ((this.spriteToucheEnBasParSprite(spriteTouche, spriteToucheur) &&
+                spriteToucheHorizontalementParSprite(spriteTouche, spriteToucheur))
+                || (this.spriteToucheEnHautParSprite(spriteTouche, spriteToucheur) &&
+                spriteToucheHorizontalementParSprite(spriteTouche, spriteToucheur)));
     }
 
-    private boolean spriteToucheHorizontalementParSprite(Sprite spriteStatique, Sprite spriteMobile) {
-        return this.spriteToucheAGaucheParSprite(spriteStatique, spriteMobile) ||
-                this.spriteToucheADroiteParSprite(spriteStatique, spriteMobile);
+    private boolean spriteToucheHorizontalementParSprite(Sprite spriteTouche, Sprite spriteToucheur) {
+        return this.spriteToucheAGaucheParSprite(spriteTouche, spriteToucheur) ||
+                this.spriteToucheADroiteParSprite(spriteTouche, spriteToucheur);
     }
 
-    public boolean spriteToucheADroiteParSprite(Sprite spriteStatique, Sprite spriteMobile) {
-        return spriteStatique.abscisseLaPlusADroite() >= spriteMobile.abscisseLaPlusAGauche() &&
-                spriteMobile.abscisseLaPlusADroite() >= spriteStatique.abscisseLaPlusAGauche();
+    public boolean spriteToucheADroiteParSprite(Sprite spriteTouche, Sprite spriteToucheur) {
+        return spriteTouche.abscisseLaPlusADroite() >= spriteToucheur.abscisseLaPlusAGauche() &&
+                spriteToucheur.abscisseLaPlusADroite() >= spriteTouche.abscisseLaPlusAGauche();
     }
 
-    public boolean spriteToucheAGaucheParSprite(Sprite spriteStatique, Sprite spriteMobile) {
-        return spriteStatique.abscisseLaPlusAGauche() <= spriteMobile.abscisseLaPlusADroite() &&
-                spriteMobile.abscisseLaPlusAGauche() <= spriteStatique.abscisseLaPlusADroite();
+    public boolean spriteToucheAGaucheParSprite(Sprite spriteTouche, Sprite spriteToucheur) {
+        return spriteTouche.abscisseLaPlusAGauche() <= spriteToucheur.abscisseLaPlusADroite() &&
+                spriteToucheur.abscisseLaPlusAGauche() <= spriteTouche.abscisseLaPlusADroite();
     }
 
-    public boolean spriteToucheEnBasParSprite(Sprite spriteStatique, Sprite spriteMobile) {
-        return spriteStatique.ordonneeLaPlusHaute() >= spriteMobile.ordonneeLaPlusBasse() &&
-                spriteMobile.ordonneeLaPlusHaute() >= spriteStatique.ordonneeLaPlusBasse();
+    public boolean spriteToucheEnBasParSprite(Sprite spriteTouche, Sprite spriteToucheur) {
+        return spriteTouche.ordonneeLaPlusHaute() >= spriteToucheur.ordonneeLaPlusBasse() &&
+                spriteToucheur.ordonneeLaPlusHaute() >= spriteTouche.ordonneeLaPlusBasse();
     }
 
-    public boolean spriteToucheEnHautParSprite(Sprite spriteStatique, Sprite spriteMobile) {
-        return spriteStatique.ordonneeLaPlusBasse() <= spriteMobile.ordonneeLaPlusHaute() &&
-                spriteMobile.ordonneeLaPlusBasse() <= spriteStatique.ordonneeLaPlusHaute();
+    public boolean spriteToucheEnHautParSprite(Sprite spriteTouche, Sprite spriteToucheur) {
+        return spriteTouche.ordonneeLaPlusBasse() <= spriteToucheur.ordonneeLaPlusHaute() &&
+                spriteToucheur.ordonneeLaPlusBasse() <= spriteTouche.ordonneeLaPlusHaute();
     }
 }

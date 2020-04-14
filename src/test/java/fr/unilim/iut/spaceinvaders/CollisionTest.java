@@ -18,7 +18,7 @@ public class CollisionTest {
     public void test_spriteToucheParSprite_DetecterCollision() {
 
         Envahisseur envahisseur = new Envahisseur(new Dimension(1, 1), new Position(5, 2), 3);
-        Missile missile = new Missile(new Dimension(1, 1), new Position(5, 2), 3);
+        MissileVaisseau missile = new MissileVaisseau(new Dimension(1, 1), new Position(5, 2), 3);
 
         assertTrue(collision.detecterCollision(envahisseur, missile));
 
@@ -28,7 +28,7 @@ public class CollisionTest {
     public void test_spriteNonToucheParSprite_DetecterCollision() {
 
         Envahisseur envahisseur = new Envahisseur(new Dimension(1, 1), new Position(5, 2), 3);
-        Missile missile = new Missile(new Dimension(1, 1), new Position(11, 9), 3);
+        MissileVaisseau missile = new MissileVaisseau(new Dimension(1, 1), new Position(11, 9), 3);
 
         assertFalse(collision.detecterCollision(envahisseur, missile));
     }
@@ -37,7 +37,7 @@ public class CollisionTest {
     public void test_spriteToucheParSpriteAGauche_DetecterCollision() {
 
         Envahisseur envahisseur = new Envahisseur(new Dimension(2, 2), new Position(5, 2), 3);
-        Missile missile = new Missile(new Dimension(1, 2), new Position(5, 1), 3);
+        MissileVaisseau missile = new MissileVaisseau(new Dimension(1, 2), new Position(5, 1), 3);
 
         assertTrue(collision.spriteToucheAGaucheParSprite(envahisseur, missile));
 
@@ -47,7 +47,7 @@ public class CollisionTest {
     public void test_spriteToucheParSpriteADroite_DetecterCollision() {
 
         Envahisseur envahisseur = new Envahisseur(new Dimension(2, 2), new Position(5, 2), 3);
-        Missile missile = new Missile(new Dimension(1, 2), new Position(5, 2), 3);
+        MissileVaisseau missile = new MissileVaisseau(new Dimension(1, 2), new Position(5, 2), 3);
 
         assertTrue(collision.spriteToucheADroiteParSprite(envahisseur, missile));
 
@@ -57,7 +57,7 @@ public class CollisionTest {
     public void test_spriteToucheParSpriteEnHaut_DetecterCollision() {
 
         Envahisseur envahisseur = new Envahisseur(new Dimension(2, 2), new Position(5, 2), 3);
-        Missile missile = new Missile(new Dimension(1, 2), new Position(5, 2), 3);
+        MissileVaisseau missile = new MissileVaisseau(new Dimension(1, 2), new Position(5, 2), 3);
 
         assertTrue(collision.spriteToucheEnHautParSprite(envahisseur, missile));
 
@@ -67,7 +67,7 @@ public class CollisionTest {
     public void test_spriteToucheParSpriteEnBas_DetecterCollision() {
 
         Envahisseur envahisseur = new Envahisseur(new Dimension(2, 2), new Position(5, 2), 3);
-        Missile missile = new Missile(new Dimension(1, 2), new Position(5, 2), 3);
+        MissileVaisseau missile = new MissileVaisseau(new Dimension(1, 2), new Position(5, 2), 3);
 
         assertTrue(collision.spriteToucheEnBasParSprite(envahisseur, missile));
 

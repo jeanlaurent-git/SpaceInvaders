@@ -8,23 +8,28 @@ public class Personnage extends Sprite {
         super(dimension, origine, vitesse);
     }
 
-    public Missile tirerUnMissile(Dimension dimensionMissile, int vitesseMissile, Direction direction) {
+    public Missile tirerUnMissile(Dimension dimensionMissile, int vitesseMissile) {
 
         if (this.dimension.longueur() < dimensionMissile.longueur())
             throw new MissileException("La longueur du missile est supérieure à celle du personnage");
 
-        Position positionOrigineMissile = calculerLaPositionDeTirDuMissile(dimensionMissile, direction);
-        return new Missile(dimensionMissile, positionOrigineMissile, vitesseMissile);
+        Position positionOrigineMissile = calculerLaPositionDeTirDuMissile(dimensionMissile);
+        if (this instanceof Envahisseur) {
+            return new MissileEnvahisseur(dimensionMissile, new Position(positionOrigineMissile.x, positionOrigineMissile.y + dimensionMissile.hauteur), vitesseMissile);
+        } else if (this instanceof Vaisseau){
+            return new MissileVaisseau(dimensionMissile, positionOrigineMissile, vitesseMissile);
+        }
+        return null;
     }
 
-    public Position calculerLaPositionDeTirDuMissile(Dimension dimensionMissile, Direction direction) {
-        int abscisseMilieuVaisseau = this.abscisseLaPlusAGauche() + (this.longueur() / 2);
-        int abscisseOrigineMissile = abscisseMilieuVaisseau - (dimensionMissile.longueur() / 2);
+    public Position calculerLaPositionDeTirDuMissile(Dimension dimensionMissile) {
+        int abscisseMilieuPersonnage = this.abscisseLaPlusAGauche() + (this.longueur() / 2);
+        int abscisseOrigineMissile = abscisseMilieuPersonnage - (dimensionMissile.longueur() / 2);
 
-        int ordonneeOrigineMissile = this.ordonneeLaPlusBasse() - 1;
-        if (Direction.BAS_ECRAN.equals(direction))
-            ordonneeOrigineMissile = this.ordonneeLaPlusHaute() + 1;
-        return new Position(abscisseOrigineMissile, ordonneeOrigineMissile);
+        if (this instanceof Envahisseur)
+            return new Position(abscisseOrigineMissile, this.ordonneeLaPlusHaute());
+        else
+            return new Position(abscisseOrigineMissile, this.ordonneeLaPlusBasse() - 1);
     }
 
 }

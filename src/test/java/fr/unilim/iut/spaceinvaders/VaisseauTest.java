@@ -12,7 +12,7 @@ public class VaisseauTest extends SpaceInvadersTest {
     @Test(expected = MissileException.class)
     public void test_LongueurMissileSuperieureALongueurVaisseau_UneExceptionEstLevee() {
         Vaisseau vaisseau = new Vaisseau(new Dimension(5, 2), new Position(5, 9), 1);
-        vaisseau.tirerUnMissile(new Dimension(7, 2), 1, Direction.HAUT_ECRAN);
+        vaisseau.tirerUnMissile(new Dimension(7, 2), 1);
     }
 
 }
