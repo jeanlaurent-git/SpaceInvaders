@@ -37,8 +37,8 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 - [Glossaire](#Glossaire)
 - [Annexes](#Annexes)
 
-
-## Semaine n°1 : du 23 au 27 février<div id="Semaine1"></div>
+<div id="Semaine1"></div>
+## Semaine n°1 : du 23 au 27 février
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -95,8 +95,8 @@ Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une 
 
 -------------
 
-
-## Semaine n°2 : du 30 février au 3 avril<div id="Semaine2"></div>
+<div id="Semaine2"></div>
+## Semaine n°2 : du 30 février au 3 avril
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -192,8 +192,8 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 
 -------------
 
-
-## Semaine n°3 : du 6 au 10 avril<div id="Semaine3"></div>
+<div id="Semaine3"></div>
+## Semaine n°3 : du 6 au 10 avril
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -276,8 +276,8 @@ Refactoring de la classe `DessinSpaceInvaders` pour ajouter l'envahisseur et ajo
 
 -------------
 
-
-## Semaine n°4 : du 13 au 17 avril<div id="Semaine4"></div>
+<div id="Semaine4"></div>
+## Semaine n°4 : du 13 au 17 avril
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -376,8 +376,8 @@ aucune.
 
 -------------
 
-
-## Semaine n°5 : du 20 au 24 avril<div id="Semaine5"></div>
+<div id="Semaine5"></div>
+## Semaine n°5 : du 20 au 24 avril
 
 
 ### Sprints et fonctionnalités réalisées 
@@ -489,8 +489,8 @@ Aucune
 
 -------------
 
-
-## Glossaire<div id="Glossaire"></div>
+<div id="Glossaire"></div>
+## Glossaire
 
 * **Vaisseau** : Véhicule commandé par le joueur, pouvant se déplacer de droite à gauche et ayant la possibilité de lancer des missiles destinés à détruire le(s) envahisseurs.
 
