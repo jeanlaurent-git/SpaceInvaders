@@ -33,6 +33,7 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 - [Semaine n°5 : du 20 au 24 avril](#Semaine5)
     * [Fonctionnalité n°9](#Fonctionnalite9)
     * [Fonctionnalité n°10](#Fonctionnalite10)
+    * [Fonctionnalité n°11](#Fonctionnalite11)
 - [Glossaire](#Glossaire)
 - [Annexes](#Annexes)
 
@@ -426,24 +427,58 @@ Ajout d'un attribut `score` à la classe `SpaceInvaders` qui est mis a 0 lors de
 
 - **Story n°10.4** : Refactoring.  
 Révision de la classe `DessinSpaceInvaders` pour ajouter l'affichage du score en haut à gauche.  
+<div id="Fonctionnalite11"></div>
+
+#### Fonctionnalité n°11 : Les ennemis tirent des missiles aléatoirement (:white_check_mark:)
+
+
+- **Story n°11.1** : Reflexion.  
+Les missiles tirent aléatoirement donc il faut implémenter une valeur aléatoire.  
+Si un missile touche le vaisseau, la partie se termine.  
+Il faut donc penser que si on tue tous les envahisseurs, il ne faut pas gagner le jeu, mais rajouter des envahisseurs 
+au jeu pour le rendre infini.
+
+
+- **Story n°11.2** : Tests.  
+Ajout de tests pour vérifier la position des missiles à leur création.  
+Ajout de tests pour vérifier le positionnement de la ligne d'envahisseurs à sa création car non fait à la fonctionnalité précédente.  
+
+
+- **Story n°11.3** : Ajouts.  
+Ajout de 2 classes : `MissileEnvahisseur` et `MissileVaisseau` qui héritent toutes les deux de la classe `Missile`.
+Ces 2 nouvelles classes sont indispensables à mon sens pour différencier les missiles afin que dans le futur quand on 
+implémentera plusieurs lignes d'envahisseurs les envahisseurs ne se tirent pas les uns sur les autres.  
+On ajoute les méthodes nécessaires au tir de missiles depuis un ennemi dans la classe `SpaceInvaders`.  
+On ajoute aussi à la classe `DessinSpaceInvaders` une méthode pour dessiner les missiles ennemis d'une couleur différente des missiles alliés.  
+On modifie aussi les méthodes de la classe `Personnage` pour introduire le tir des ennemis.  
+
+
+- **Story n°11.4** : Refactoring.  
+Refactoring de la classe `SpaceInvaders` pour simplifier les méthodes notamment la méthode `evoluer` dont on a extrait des méthodes.  
+Refactoring des classes de test pour être à jour avec les dernières modifications de refactoring pour ne plus utiliser la méthode `evoluer`.  
+Refactoring du glossaire pour correspondre aux fonctionnalités actuelles.  
 
 
 ### Fonctionnalité en cours d’implémentation : 
 Aucune
 
 
-### Diagramme de classes *(Fonctionnalités 9 et 10)*
+### Diagramme de classes *(Fonctionnalités 9, 10 et 11)*
 
 ![Diagrammes de classes de la fonctionnalité n°9](ressources/Captures/spaceinvaders%20diagramme%20de%20classe%20capture%209.PNG)
 
 ![Diagrammes de classes de la fonctionnalité n°10](ressources/Captures/spaceinvaders%20diagramme%20de%20classe%20capture%2010.PNG)
 
-### Nuage de mots du projet spaceinvaders *(Fonctionnalités 9 et 10)*
+![Diagrammes de classes de la fonctionnalité n°11](ressources/Captures/spaceinvaders%20diagramme%20de%20classe%20capture%2011.PNG)
+
+### Nuage de mots du projet spaceinvaders *(Fonctionnalités 9, 10 et 11)*
 (généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](ressources/JavaBlacklist.txt) tous les deux fournis par [Isabelle Blasquez](https://github.com/iblasquez))
  
 ![Nuage de mots de la fonctionnalité n°9](ressources/Captures/spaceinvaders%20cloud%20capture%209.png)
 
 ![Nuage de mots de la fonctionnalité n°10](ressources/Captures/spaceinvaders%20cloud%20capture%2010.png)
+
+![Nuage de mots de la fonctionnalité n°11](ressources/Captures/spaceinvaders%20cloud%20capture%2011.png)
 
 ### Difficultés rencontrées  
 Aucune
@@ -459,23 +494,27 @@ Aucune
 
 * **Vaisseau** : Véhicule commandé par le joueur, pouvant se déplacer de droite à gauche et ayant la possibilité de lancer des missiles destinés à détruire le(s) envahisseurs.
 
-* **Envahisseur** : Ennemi qui apparaît à l'écran, se déplace automatiquement de droite à gauche et qui doit être détruit par un missile lancé depuis le vaisseau du joueur.
+* **Envahisseur** : Ennemi qui apparaît à l'écran, se déplace automatiquement de droite à gauche et qui doit être détruit par un missile lancé depuis le vaisseau du joueur. Il tire des missiles aléatoirement.
 
-* **Missile** : Projectile envoyé à la verticale par le vaisseau vers l'envahisseur dans le but de le détruire.
+* **Missile** : Projectile envoyé à la verticale par le vaisseau vers l'envahisseur dans le but de le détruire. Mais aussi depuis un envahisseur verticalement vers le bas de l'ecran dans le but de détruire le vaisseau.  
 
 * **Immobile** : Aucun déplacement, aucune exception levée : le sprite reste juste à sa position actuelle.
 
-* **Vitesse** : Grandeur physique associée aux différents sprites. Elle correspond à la vitesse de déplacement des sprites sur l'ecran et peut varier. Elle est représentée par un entier qui correspond au nombre de pixels parcourus par le sprite à chaque demande de déplacement.
+* **Vitesse** : Grandeur physique associée aux différents sprites. Elle correspond à la distance parcourue au cours d'un déplacement.
 
 * **Personnage** : Être fictif et virtuel, contrôlé ou non par le joueur, qui apparaît dans un jeu vidéo.
 
 * **Sprite** : Élément graphique qui peut se déplacer sur l'ecran. Identifie les personnages et les objets qui se superposent au fond d'ecran et qui se déplacent.
 
-* **Collision** : Une collision est détectée lorsqu'un sprite se retrouve 'à cheval' sur un autre sprite.
+* **Collision** : Une collision est détectée lorsqu'un sprite est placé à la meme place su'un autre sprite.
 
-* **Fin de partie** : La fin de partie correspond à la collision entre deux sprites.
+* **Fin de partie** : La fin de partie correspond à la collision entre un missile de l'envahisseur et le vaisseau.
 
 * **Cooldown** : Terme correspondant au temps minimal entre deux actions.
+
+* :x: : Fonctionnalité non ou partiellement implémentée.
+
+* :white_check_mark: : Fonctionnalité implémentée complètement.  
 
 
 ------------- 
