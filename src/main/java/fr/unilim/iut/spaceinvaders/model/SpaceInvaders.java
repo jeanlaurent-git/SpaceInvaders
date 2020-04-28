@@ -199,11 +199,14 @@ public class SpaceInvaders implements Jeu {
     }
 
     private void changerDirectionEnvahisseurADroite () {
-        if (Direction.DROITE.equals(envahisseurs.get(0).getDirection()) && envahisseurs.get(envahisseurs.size() - 1).abscisseLaPlusADroite() >= longueur - 1) {
-            for (Envahisseur envahisseur : envahisseurs) {
-                envahisseur.setDirection(Direction.GAUCHE);
+        for (int i = 0; i < envahisseurs.size(); i++) {
+            if (Direction.DROITE.equals(envahisseurs.get(0).getDirection()) && envahisseurs.get(i).abscisseLaPlusADroite() >= longueur - 1) {
+                for (Envahisseur envahisseur : envahisseurs) {
+                    envahisseur.setDirection(Direction.GAUCHE);
+                }
+                distanceParcourue += 1;
+                break;
             }
-            distanceParcourue += 1;
         }
     }
 
@@ -272,7 +275,7 @@ public class SpaceInvaders implements Jeu {
             positionnerUneNouvelleLigneEnvahisseurs();
         }
 
-        if (envahisseurs.get(0).origine.y >= (Constante.ENVAHISSEUR_POSITION_Y + (2 * Constante.ENVAHISSEUR_HAUTEUR))) {
+        if ((envahisseurs.get(0).origine.y - Constante.ENVAHISSEUR_POSITION_Y) % (2 * Constante.ENVAHISSEUR_HAUTEUR) == 0) {
             Position positionRef = new Position(Constante.ENVAHISSEUR_POSITION_X, Constante.ENVAHISSEUR_POSITION_Y);
             Position position = envahisseurs.get(0).origine;
             Dimension dimension = envahisseurs.get(0).dimension;
