@@ -41,6 +41,7 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
 - [Annexes](#Annexes)
 
 <div id="Semaine1"></div>
+
 ## Semaine n°1 : du 23 au 27 février
 
 
@@ -99,6 +100,7 @@ Pour pouvoir, mettre en place les tests, il a été nécessaire d’ajouter une 
 -------------
 
 <div id="Semaine2"></div>
+
 ## Semaine n°2 : du 30 février au 3 avril
 
 
@@ -196,6 +198,7 @@ Pour pouvoir mettre en place le moteur graphique, il a été nécessaire d'impl�
 -------------
 
 <div id="Semaine3"></div>
+
 ## Semaine n°3 : du 6 au 10 avril
 
 
@@ -280,6 +283,7 @@ Refactoring de la classe `DessinSpaceInvaders` pour ajouter l'envahisseur et ajo
 -------------
 
 <div id="Semaine4"></div>
+
 ## Semaine n°4 : du 13 au 17 avril
 
 
@@ -380,6 +384,7 @@ aucune.
 -------------
 
 <div id="Semaine5"></div>
+
 ## Semaine n°5 : du 20 au 24 avril
 
 
@@ -589,9 +594,9 @@ Aucune
 
 
 ------------- 
+<div id="Annexes"></div>
 
-
-## Annexes<div id="Annexes"></div>
+## Annexes
 
 - [JavaBlacklist.txt](ressources/JavaBlacklist.txt)  
 - [Ressources graphiques](ressources/Captures)
