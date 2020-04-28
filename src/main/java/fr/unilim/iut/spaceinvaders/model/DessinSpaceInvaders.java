@@ -71,10 +71,10 @@ public class DessinSpaceInvaders extends JPanel implements DessinJeu {
                             envahisseur.ordonneeLaPlusBasse() + (int) (6 * pixel), (int) (1 * pixel),
                             (int) (3 * pixel));
             crayon.fillRect(envahisseur.abscisseLaPlusAGauche() + (int) (1 * pixel),
-                            envahisseur.ordonneeLaPlusBasse() + (int) (9 * pixel), (int) (2 * pixel),
+                            envahisseur.ordonneeLaPlusBasse() + (int) (9 * pixel), (int) (3 * pixel),
                             (int) (1 * pixel));
-            crayon.fillRect(envahisseur.abscisseLaPlusAGauche() + (int) (7 * pixel),
-                            envahisseur.ordonneeLaPlusBasse() + (int) (9 * pixel), (int) (2 * pixel),
+            crayon.fillRect(envahisseur.abscisseLaPlusAGauche() + (int) (6 * pixel),
+                            envahisseur.ordonneeLaPlusBasse() + (int) (9 * pixel), (int) (3 * pixel),
                             (int) (1 * pixel));
             crayon.fillRect(envahisseur.abscisseLaPlusAGauche() + (int) (2 * pixel),
                             envahisseur.ordonneeLaPlusBasse(), (int) (1 * pixel),

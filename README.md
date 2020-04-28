@@ -34,6 +34,9 @@ Ces défenses se désintègrent progressivement sous l'effet des projectiles adv
     * [Fonctionnalité n°9](#Fonctionnalite9)
     * [Fonctionnalité n°10](#Fonctionnalite10)
     * [Fonctionnalité n°11](#Fonctionnalite11)
+- [Semaine n°6 : du 27 avril au 1er mai](#Semaine5)
+    * [Mise a jour graphique](#Graphismes)
+    * [Fonctionnalité n°12](#Fonctionnalite12)
 - [Glossaire](#Glossaire)
 - [Annexes](#Annexes)
 
@@ -489,12 +492,80 @@ Aucune
 
 -------------
 
+<div id="Semaine6"></div>
+## Semaine n°6 : du 27 avril au 1er mai
+
+
+### Sprints et fonctionnalités réalisées 
+
+<div id="Graphismes"></div>
+
+#### Mise a jour graphique
+
+Modification de l'affichage des ennemis et du vaisseau pour qu'ils paraissent plus pixelisés.  
+Cette mise a jour est purement graphique et n'implémente pas de fonctionnalités.  
+Elle corrige quand même une petite erreur de codage qui faisait faire demi-tour à la ligne d'envahisseurs dans certaines
+ conditions.  
+ 
+<div id="Fonctionnalite12"></div>
+
+#### Fonctionnalité n°12 : Les ennemis apparaissent a l'infini et descendent dans l'espace de jeu (:white_check_mark:)
+
+
+- **Story n°12.1** : Reflexion.  
+Les envahisseurs se déplacent de gauche à droite. Il faut donc détecter un aller-retour sur 2 afin de faire baisser
+ la ligne d'envahisseurs.  
+Il est décidé arbitrairement que a chaque fois que la ligne descend, elle descend de la hauteur d'un envahisseur.  
+
+
+- **Story n°12.2** : Tests.  
+Plusieurs tests sont mis en place tout d'abord pour être a jour sur les tests nécessaires à la collision entre un
+ missile du vaisseau et un envahisseur mais aussi entre deux missiles.  
+De plus, un test pour vérifier que le vaisseau descend de sa hauteur lorsqu'il a effectué un aller-retour.  
+
+
+- **Story n°12.3** : Ajouts.  
+Ajout d'un attribut `distanceParcourue` à la classe `Spaceinvaders`.  
+Ajout des méthodes `deplacerEnvahisseursApresAllerRetour()` et `detecterCollisionMissileMissile()` pour coïncider
+ avec les nouveaux tests.  
+Ajout de getter et setter au nouvel attribut.  
+
+
+- **Story n°12.4** : Refactoring.  
+Refactoring des méthodes `evoluer()` et `deplacerEnvahisseurs()` pour simplifier les méthodes et ajouter la descente
+ des envahisseurs ainsi que l'apparition infinie de lignes d'envahisseurs.  
+
+
+### Fonctionnalité en cours d’implémentation : 
+Aucune
+
+
+### Diagramme de classes *(Fonctionnalité 12)*
+
+![Diagrammes de classes de la fonctionnalité n°12](ressources/Captures/spaceinvaders%20diagramme%20de%20classe%20capture%2012.PNG)
+
+### Nuage de mots du projet spaceinvaders *(Fonctionnalité 12)*
+(généré à l’aide de [Source Code Word Cloud Generator](https://github.com/iblasquez/enseignement-iut-m2104-conception/blob/master/ressources/Word%20Cloud%20Generator.zip) avec la liste [JavaBlacklist.txt](ressources/JavaBlacklist.txt) tous les deux fournis par [Isabelle Blasquez](https://github.com/iblasquez))
+ 
+![Nuage de mots de la fonctionnalité n°12](ressources/Captures/spaceinvaders%20cloud%20capture%2012.png)
+
+### Difficultés rencontrées  
+Aucune
+
+### Remarques diverses  
+Aucune
+
+
+-------------
+
 <div id="Glossaire"></div>
+
 ## Glossaire
 
 * **Vaisseau** : Véhicule commandé par le joueur, pouvant se déplacer de droite à gauche et ayant la possibilité de lancer des missiles destinés à détruire le(s) envahisseurs.
 
-* **Envahisseur** : Ennemi qui apparaît à l'écran, se déplace automatiquement de droite à gauche et qui doit être détruit par un missile lancé depuis le vaisseau du joueur. Il tire des missiles aléatoirement.
+* **Envahisseur** : Ennemi qui apparaît à l'écran, se déplace automatiquement de droite à gauche et qui doit être détruit par un missile lancé depuis le vaisseau du joueur. Il tire des missiles aléatoirement. Une fois qu'il a
+ effectué un aller-retour, il descend d'un cran et continue son déplacement.  
 
 * **Missile** : Projectile envoyé à la verticale par le vaisseau vers l'envahisseur dans le but de le détruire. Mais aussi depuis un envahisseur verticalement vers le bas de l'ecran dans le but de détruire le vaisseau.  
 
