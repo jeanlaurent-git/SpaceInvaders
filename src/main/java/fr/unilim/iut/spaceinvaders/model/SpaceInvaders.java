@@ -231,6 +231,11 @@ public class SpaceInvaders implements Jeu {
 
     @Override
     public void evoluer(Commande commandeUtilisateur) {
+
+        if (!this.aDesEnvahisseurs()) {
+            positionnerUneNouvelleLigneEnvahisseurs();
+        }
+
         if (commandeUtilisateur != null) {
             commandeGauche(commandeUtilisateur);
             commandeDroite(commandeUtilisateur);
@@ -246,10 +251,6 @@ public class SpaceInvaders implements Jeu {
         if (this.aDesEnvahisseurs()) {
             this.deplacerEnvahisseurs();
             faireTirerAleatoirementLesEnvahisseurs();
-        }
-
-        if (!this.aDesEnvahisseurs()) {
-            positionnerUneNouvelleLigneEnvahisseurs();
         }
 
     }
@@ -281,21 +282,25 @@ public class SpaceInvaders implements Jeu {
 
     public void detecterCollisionVaisseauMissile() {
         for (int i = 0; i < this.missilesEnvahisseurs.size(); i++) {
-            if (this.aUnVaisseau() && this.aDesMissilesEnnemi() && (new Collision()).detecterCollision(vaisseau, missilesEnvahisseurs.get(0))) {
+            if (this.aUnVaisseau() && this.aDesMissilesEnnemi() && (new Collision()).detecterCollision(vaisseau, missilesEnvahisseurs.get(i))) {
                 vaisseau = null;
-                this.missilesEnvahisseurs.remove(0);
+                this.missilesEnvahisseurs.remove(i);
                 this.partieFinie = true;
-
             }
         }
     }
 
     public void detecterCollisionEnvahisseurMissile() {
+        if (this.aDesEnvahisseurs())
         for (int i = 0; i < this.envahisseurs.size(); i++) {
-            if (this.aDesEnvahisseurs() && this.aDesMissilesAllie() && (new Collision()).detecterCollision(envahisseurs.get(i), missilesVaisseau.get(0))) {
-                envahisseurs.remove(i);
-                this.missilesVaisseau.remove(0);
-                this.augmenterScore(Constante.SCORE_DETRUIRE_ENVAHISSEUR);
+            if (this.aDesMissilesAllie())
+            for (int j = 0; j < this.missilesVaisseau.size(); j++) {
+                if (this.aDesMissilesAllie() && this.aDesEnvahisseurs() && (new Collision()).detecterCollision(envahisseurs.get(i), missilesVaisseau.get(j))) {
+                    this.augmenterScore(Constante.SCORE_DETRUIRE_ENVAHISSEUR);
+                    this.missilesVaisseau.remove(j);
+                    this.envahisseurs.remove(i);
+                    break;
+                }
             }
         }
     }
