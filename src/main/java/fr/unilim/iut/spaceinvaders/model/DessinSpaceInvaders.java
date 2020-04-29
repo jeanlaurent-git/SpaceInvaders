@@ -187,8 +187,8 @@ public class DessinSpaceInvaders extends JPanel implements DessinJeu {
         Graphics2D crayon = (Graphics2D) image.getGraphics();
 
         crayon.setColor(Color.WHITE);
-        crayon.setFont(new Font(Constante.MESSAGE_VICTOIRE_FONT, Font.PLAIN, Constante.MESSAGE_VICTOIRE_TAILLE));
-        crayon.drawString(Constante.MESSAGE_VICTOIRE_TEXT, Constante.ESPACE_JEU_LONGUEUR / 5,
+        crayon.setFont(new Font(Constante.MESSAGE_FIN_FONT, Font.PLAIN, Constante.MESSAGE_FIN_TAILLE));
+        crayon.drawString(Constante.MESSAGE_FIN_TEXT, Constante.ESPACE_JEU_LONGUEUR / 5,
                           Constante.ESPACE_JEU_HAUTEUR / 2);
     }
 

@@ -38,7 +38,7 @@ public class Constante {
     public static final int SCORE_POSITION_X = 20;
     public static final int SCORE_POSITION_Y = 30;
 
-    public static final String MESSAGE_VICTOIRE_FONT = "Arial";
-    public static final String MESSAGE_VICTOIRE_TEXT = "VOUS AVEZ PERDU !";
-    public static final int MESSAGE_VICTOIRE_TAILLE = 50;
+    public static final String MESSAGE_FIN_FONT = "Arial";
+    public static final String MESSAGE_FIN_TEXT = "VOUS AVEZ PERDU !";
+    public static final int MESSAGE_FIN_TAILLE = 50;
 }
