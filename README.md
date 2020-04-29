@@ -16,6 +16,9 @@ Quatre bâtiments destructibles permettent au joueur de se protéger des tirs en
 Ces défenses se désintègrent progressivement sous l'effet des projectiles adverses et de ceux du joueur.
 *Le nombre de bâtiments n'est pas le même d'une version à l'autre.*
 
+Pour lancer le jeu, il suffit de télécharger le dépôt sur votre machine (en zip, il faut le déziper sinon en clonant
+ le repository), installer le jre 1.8 si ce n'est pas déjà fait. Enfin lancer le fichier `launch.bat`.
+
 ## Sommaire
 - [Semaine n°1 : du 23 au 27 février](#Semaine1)
     * [Fonctionnalité n°1](#Fonctionnalite1)
