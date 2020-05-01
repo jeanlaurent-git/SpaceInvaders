@@ -37,7 +37,7 @@ Pour lancer le jeu, il suffit de télécharger le dépôt sur votre machine (en 
     * [Fonctionnalité n°9](#Fonctionnalite9)
     * [Fonctionnalité n°10](#Fonctionnalite10)
     * [Fonctionnalité n°11](#Fonctionnalite11)
-- [Semaine n°6 : du 27 avril au 1er mai](#Semaine5)
+- [Semaine n°6 : du 27 avril au 1er mai](#Semaine6)
     * [Mise a jour graphique](#Graphismes)
     * [Fonctionnalité n°12](#Fonctionnalite12)
 - [Glossaire](#Glossaire)
@@ -501,6 +501,7 @@ Aucune
 -------------
 
 <div id="Semaine6"></div>
+
 ## Semaine n°6 : du 27 avril au 1er mai
 
 
